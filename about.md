@@ -16,5 +16,5 @@ I am a **big** gamer. Here are some of my favorite games ranked:
 ### *Fun* facts
 | Fact | My thoughts |
 | ---- | ----------- |
-| My first few months of playing Minecraft involved me sitting in a hole waiting for my friend to join me (he never did).| I fully believed in Herobrine and was terrified of him.|
-|
+| My first few months of playing Minecraft involved me sitting in a hole waiting for my friend to join me (he never did).| I fully believed in Herobrine and was terrified of him. Now I want those months back.|
+| Minecraft got me into coding with redstone and command blocks. I loved making maps to play on with my friends.| I'm very thankful that the Chinese version of Minecraft (Yes that exists) made multiplayer really easy. It literally set my life up.|
