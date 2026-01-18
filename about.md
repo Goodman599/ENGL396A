@@ -12,3 +12,9 @@ I am a **big** gamer. Here are some of my favorite games ranked:
 3. Deadlock
 4. Marvel Rivals
 5. Terraria
+
+### *Fun* facts
+| Fact | My thoughts |
+| ---- | ----------- |
+| My first few months of playing Minecraft involved me sitting in a hole waiting for my friend to join me (he never did).| I fully believed in Herobrine and was terrified of him.|
+|
