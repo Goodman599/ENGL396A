@@ -5,7 +5,7 @@ body {
   margin: 0;
   overflow-x: hidden
 }
-.note {
+.poppup {
   padding: 15px;
   border-radius: 8px;
   margin: 20px 0;
@@ -13,7 +13,7 @@ body {
   border: 1px solid rgba(0,0,0,0.1); /* Subtle border for definition */
 }
 
-.note-header {
+.poppup-header {
   font-weight: bold;
   margin-bottom: 5px;
   text-transform: uppercase;
@@ -21,27 +21,27 @@ body {
 }
 
 /* Color Variations */
-.note-yellow {
+.note {
   background-color: #fff9c4; /* Light Yellow */
   color: #827717;           /* Dark Yellow/Olive text */
 }
-.note-yellow .note-header {
+.note .poppup-header {
   color: #f57f17;           /* Vibrant Dark Yellow for header */
 }
 
-.note-blue {
+.info {
   background-color: #e3f2fd;  /* Light Blue */
   color: #0d47a1;            /* Dark Blue text */
 }
-.note-blue .note-header {
+.info .poppup-header {
   color: #1565c0;            /* Even darker blue for header */
 }
 
-.note-pink {
+.warning {
   background-color: #fce4ec;  /* Light Pink */
   color: #880e4f;            /* Dark Maroon/Pink text */
 }
-.note-pink .note-header {
+.warning .poppup-header {
   color: #c2185b;            /* Deep pink for header */
 }
 .ui-element {
