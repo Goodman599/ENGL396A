@@ -65,28 +65,65 @@
       </li>
       <li>Make sure the file is named <span class="code-snippet">album-rankings.csv</span>. If you made a copy, make sure the original is named something else.</li>
     </ol>
-
+    
     <h1 id="filling-csv">Filling Out Your Album Rankings File</h1>
     <p>This will be a rundown on how to fill each "column" of your album-rankings.csv file for it to work with My Favorite Albums.</p>
-    <h2>Year</h2>
-    The year the album was released, written as a number.
-    <h2>Ranking</h2>
-    <p>How highly you rank that album for that year. For example, if Becoming X by Snaker Pimps was your number one favorite album released in 1996, it would be ranked as 1.</p>
-    <h2>Album</h2>
-    <p>The name of the album.</p>
-    <h2>Artist</h2>
-    <p>The name of the artist who made the album.</p>
-    <h2>Rating</h2>
-    <p>A 1 (album you hated) to 10 (Album you loved) rating you give to an album.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Column Name</th>
+          <th>Description</th>
+          <th>Requirement / Example</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Year</strong></td>
+          <td>The year the album was released.</td>
+          <td>Written as a number (e.g., <span class="code-snippet">1996</span>)</td>
+        </tr>
+        <tr>
+          <td><strong>Ranking</strong></td>
+          <td>Your rank for that album within that specific year.</td>
+          <td><span class="code-snippet">1</span> is your top favorite.</td>
+        </tr>
+        <tr>
+          <td><strong>Album</strong></td>
+          <td>The official title of the album.</td>
+          <td>e.g., <span class="code-snippet">Becoming X</span></td>
+        </tr>
+        <tr>
+          <td><strong>Artist</strong></td>
+          <td>The name of the performer or group.</td>
+          <td>e.g., <span class="code-snippet">Sneaker Pimps</span></td>
+        </tr>
+        <tr>
+          <td><strong>Rating</strong></td>
+          <td>Your personal score for the music.</td>
+          <td>Scale of <span class="code-snippet">1</span> to <span class="code-snippet">10</span></td>
+        </tr>
+        <tr>
+          <td><strong>Vinyl</strong></td>
+          <td>Indicates physical vinyl ownership.</td>
+          <td>Enter <span class="code-snippet">v</span> if you do, or leave blank otherwise.</td>
+        </tr>
+        <tr>
+          <td><strong>EP</strong></td>
+          <td>Indicates if the release is an EP.</td>
+          <td>Enter <span class="code-snippet">EP</span> if it is, or leave blank otherwise.</td>
+        </tr>
+        <tr>
+          <td><strong>Live</strong></td>
+          <td>Indicates if it is a live recording.</td>
+          <td>Enter <span class="code-snippet">Live</span> if it is, or leave blank otherwise.</td>
+        </tr>
+      </tbody>
+    </table>
+    
     <div class="popup warning">
       <div class="popup-header">Warning:</div>
       My Favorite Albums do not check if your ratings match your rankings. If you accidentally rank a 1/10 album as the first in a year, My Favorite Albums would likely return erroneous data.
     </div>
-    <h2>Vinyl</h2>
-    <p>If you own the vinyl of an album, fill in the cell with a <span class="code-snippet">v</span>. If not, leave the cell blank.</p>
-    <h2>EP</h2>
-    <p>If you own the EP of an album, fill in the cell with a <span class="code-snippet">EP</span>. If not, leave the cell blank.</p>
-    <h2>Live</h2>
-    <p>If you own the live version of an album, fill in the cell with a <span class="code-snippet">Live</span>. If not, leave the cell blank.</p>
+
   </body>
 </html>
