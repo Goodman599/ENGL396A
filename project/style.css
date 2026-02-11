@@ -9,3 +9,15 @@ body {
   text-align: center;
   color: red;
 }
+.ui-element {
+  font-weight: bold;
+}
+.code-snippet {
+  font-family: "Courier New", Courier, monospace; /* Ensures a fixed-width font */
+  background-color: #f4f4f4;                     /* Light gray background */
+  color: #333;                                   /* Dark gray text for readability */
+  padding: 5px 10px;                             /* Space inside the box */
+  border: 1px solid #ddd;                        /* Subtle border to define the edges */
+  border-radius: 4px;                            /* Slightly rounded corners */
+  display: inline-block;                         /* Keeps it from taking up the whole line */
+}
