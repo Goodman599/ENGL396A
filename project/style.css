@@ -7,6 +7,7 @@ body {
   margin: 0;
   overflow-x: hidden
 }
+
 .popup {
   padding: 15px;
   border-radius: 8px;
@@ -14,12 +15,14 @@ body {
   font-family: sans-serif;
   border: 1px solid rgba(0,0,0,0.1);
 }
-
 .popup-header {
   font-weight: bold;
-  margin-bottom: 5px;
   text-transform: uppercase;
   font-size: 0.9em;
+  
+  margin: -15px -15px 10px -15px; 
+  padding: 10px 15px;
+  border-radius: 8px 8px 0 0;
 }
 
 /* Color Variations */
@@ -28,7 +31,8 @@ body {
   color: #827717;
 }
 .note .popup-header {
-  color: #f57f17;
+  background-color: #f0e68c;
+  color: #5d540d;
 }
 
 .info {
@@ -36,7 +40,8 @@ body {
   color: #0d47a1;
 }
 .info .popup-header {
-  color: #1565c0;
+  background-color: #bbdefb; /* Darker blue background */
+  color: #0a3578;
 }
 
 .warning {
@@ -44,17 +49,19 @@ body {
   color: #880e4f;
 }
 .warning .popup-header {
-  color: #c2185b;
+  background-color: #f8bbd0; /* Darker pink background */
+  color: #560932;
 }
+
 .ui-element {
   font-weight: bold;
 }
 .code-snippet {
-  font-family: "Courier New", Courier, monospace; /* Ensures a fixed-width font */
-  background-color: #f4f4f4;                     /* Light gray background */
-  color: #333;                                   /* Dark gray text for readability */
-  padding: 5px 10px;                             /* Space inside the box */
-  border: 1px solid #ddd;                        /* Subtle border to define the edges */
-  border-radius: 4px;                            /* Slightly rounded corners */
-  display: inline-block;                         /* Keeps it from taking up the whole line */
+  font-family: "Courier New", Courier, monospace;
+  background-color: #f4f4f4;
+  color: #333;
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  display: inline-block;
 }
