@@ -22,27 +22,27 @@ body {
 
 /* Color Variations */
 .note {
-  background-color: #fff9c4; /* Light Yellow */
-  color: #827717;           /* Dark Yellow/Olive text */
+  background-color: #fff9c4;
+  color: #827717;
 }
 .note .poppup-header {
-  color: #f57f17;           /* Vibrant Dark Yellow for header */
+  color: #f57f17;
 }
 
 .info {
-  background-color: #e3f2fd;  /* Light Blue */
-  color: #0d47a1;            /* Dark Blue text */
+  background-color: #e3f2fd;
+  color: #0d47a1;
 }
 .info .poppup-header {
-  color: #1565c0;            /* Even darker blue for header */
+  color: #1565c0;
 }
 
 .warning {
-  background-color: #fce4ec;  /* Light Pink */
-  color: #880e4f;            /* Dark Maroon/Pink text */
+  background-color: #fce4ec;
+  color: #880e4f;
 }
 .warning .poppup-header {
-  color: #c2185b;            /* Deep pink for header */
+  color: #c2185b;
 }
 .ui-element {
   font-weight: bold;
