@@ -7,8 +7,8 @@
     <h1>Creating and Adding a Custom .csv File</h1>
     <p>To import custom album data, you need to have both My Favorite Albums and RStudio installed and set up.<br>
     By creating a custom .csv file, you can change the album data My Favorite Albums can analyze.</p>
-    <div class="poppup note">
-      <div class="poppup-header">Note:</div>
+    <div class="popup note">
+      <div class="popup-header">Note:</div>
       This will not affect the example version of My Favorite Albums.
     </div>
     <h2>Creating a .csv File</h2>
@@ -56,8 +56,8 @@
           <li>Treat each comma like a column in a spreadsheet, and each line change as a row. Commas with nothing between them are the same as an empty cell.</li>
           <li>
             The album Becoming X by Sneaker Pimps released in 1996 can be entered as <span class="code-snippet">1996,,Becoming X,Sneaker Pimps,,,,</span>
-            <div class="poppup warning">
-              <div class="poppup-header">Warning:</div>
+            <div class="popup warning">
+              <div class="popup-header">Warning:</div>
               This will not be a valid entry in the .csv file because it is missing a rating and ranking. This is just to show how an entry would be formatted.
             </div>
           </li>
@@ -119,11 +119,23 @@
         </tr>
       </tbody>
     </table>
-    
     <div class="popup warning">
       <div class="popup-header">Warning:</div>
       My Favorite Albums do not check if your ratings match your rankings. If you accidentally rank a 1/10 album as the first in a year, My Favorite Albums would likely return erroneous data.
     </div>
 
+    <h1>Importing Your Album Rankings Into My Favorite Albums</h1>
+    <p>If you made your rankings file using RStudio, you should already be done. If you didn't, or something didn't work:</p>
+    <ol>
+      <li>Open the local file location where you are storing My Favorite Albums</li>
+      <li>Open the <span class="code-snippet">data</span> folder</li>
+      <li>
+        Move your file into the data folder, replacing the old .csv file.
+        <ul>
+          <li>Ensure your file is called <span class="code-snippet">album-rankings.csv</span>.
+        </ul>
+      </li>
+      <li>Use RStudio to open app.R, and click <span class="ui-element">Run App</span>. Your data should now be analyzed by My Favorite Albums.</li>
+    </ol>
   </body>
 </html>
