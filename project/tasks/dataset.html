@@ -54,7 +54,13 @@
         Fill the file out for each of your favorite songs. Details are given in the <a class="ui=element" id="filling-csv">Filling a .csv File</a> section
         <ul>
           <li>Treat each comma like a column in a spreadsheet, and each line change as a row. Commas with nothing between them are the same as an empty cell.</li>
-          <li>An example entry would be <span class="code-snippet">1996,25,Becoming X,Sneaker Pimps,6,,,</span></li>
+          <li>
+            The album Becoming X by Sneaker Pimps released in 1996 can be entered as <span class="code-snippet">1996,,Becoming X,Sneaker Pimps,,,,</span>
+            <div class="poppup warning">
+              <div class="poppup-header">Warning:</div>
+              This will not be a valid entry in the .csv file because it is missing a rating and ranking. This is just to show how an entry would be formatted.
+            </div>
+          </li>
         </ul>
       </li>
       <li>Make sure the file is named <span class="code-snippet">album-rankings.csv</span>. If you made a copy, make sure the original is named something else.</li>
