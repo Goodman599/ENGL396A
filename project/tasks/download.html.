@@ -7,9 +7,9 @@
     <h1>Downloading My Favorite Albums</h1>
     
     <h2>Download R and RStudio</h2>
-    <p>My favorite album runs on the programming language R, and the primary workspace for it is RStudio.</p>
-    <p>If you don't have RStudio installed yet, the official download is <a target="_blank" rel="RStudio download" href="https://posit.co/downloads/">here.</a></p>
-    <p>From the RStudio page, download R too.</p>
+    <p>My favorite album runs on the programming language R, and the primary workspace for it is RStudio.<br>
+    If you don't have RStudio installed yet, the official download is <a target="_blank" rel="RStudio download" href="https://posit.co/downloads/">here.</a><br>
+    From the RStudio page, download R too.</p>
     <div class="note">Make sure to not download the RStudio Server</div>
 
     <h2>Download My Favorite Albums</h2>
