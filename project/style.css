@@ -27,7 +27,7 @@ body {
   background-color: #fff9c4;
   color: #827717;
 }
-.note .poppup-header {
+.note .popup-header {
   color: #f57f17;
 }
 
@@ -35,7 +35,7 @@ body {
   background-color: #e3f2fd;
   color: #0d47a1;
 }
-.info .poppup-header {
+.info .popup-header {
   color: #1565c0;
 }
 
@@ -43,7 +43,7 @@ body {
   background-color: #fce4ec;
   color: #880e4f;
 }
-.warning .poppup-header {
+.warning .popup-header {
   color: #c2185b;
 }
 .ui-element {
