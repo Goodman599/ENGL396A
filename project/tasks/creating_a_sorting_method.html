@@ -257,7 +257,7 @@
       <li>
         First, we want to sort <span class="code-snippet">album_data</span> so that the recent albums appear first, which we can save to a variable.<br>
         <span class="code-snippet">recent_albums <- album_data %>% arrange(desc(Year))</span>
-        <div class="popup note">
+        <div class="popup info">
           <div class="popup-header">Note:</div>
           This uses code from the <a href="https://nyu-cdsc.github.io/learningr/assets/data-transformation.pdf" target="_blank" rel="dplyr cheatsheet">dplyr cheatsheet</a>.
         </div>
@@ -273,10 +273,43 @@
       <p>
         Finally, we should have this:
         <div class="code-block">recent_albums <- album_data %>% arrange(desc(Year))
+          
 list_albums <- function() {
   all_albums_cleaned <- select(recent_albums, Year, Album, Artist)
 }</div>
       </p>
     </ol>
+
+    <p>Next, in app.R, add <span class="code-snippet">source("list_albums.R")</span>.</p>
+
+    <p>
+      Next, in app_ui.R, we will add a new tab called <em>All Albums</em>. Since our function will take no user inputs, all we need is some text to serve as a title and a table to display every album.<br>
+      We will give the label the ID <em>all_albums_title</em>, and the table the ID <em>all_albums_table</em>
+    </p>
+    <div class="code-block">tabPanel("All albums",
+       htmlOutput("all_albums_title"),
+       tableOutput("all_albums_table"))</div>
+    
+    <div class="popup note>
+      <div class="popup-header">Note:</div>
+      Make sure that the previous <span class="code-snippet">tabPanel</span> entry has a comma at the end.
+    </div>
+
+    <p>Finally, in app_server.R:</p>
+    <ol>
+      <li>
+        First, we add the title by targeting <em>all_albums_title</em>: <br>
+        <div class="code-block">output$all_albums_title <- renderUI({
+  HTML("<h2>Every album in the database</h2><br>")
+})</div>
+      </li>
+      <li>
+        Next, we target the <em>all_albums_table</em> and replace it with a <span class="code-snippet">return()</span> from calling our function <em>list_albums</em>.<br>
+        <div class="code-block">output$all_albums_table <- renderTable({
+  return(list_albums())
+})</div>
+      </li>
+    </ol>
+  <p>After saving, you should be able to go to <span class="ui-element">app.R</span> and run the program.</p>
   </body>
 </html>
