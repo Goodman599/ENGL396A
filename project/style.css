@@ -79,3 +79,13 @@ body {
   max-width: 100%;
   height: auto;
 }
+
+.placeholder {
+  text-decoration: underline;
+}
+
+table {
+  padding: 8px;
+  border: 1px solid;
+  margin: 10px 0;
+}
