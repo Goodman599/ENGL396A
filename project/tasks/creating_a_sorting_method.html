@@ -206,27 +206,18 @@
           </li>
         </ul>
       </li>
+      <p>
+        In the end, your code should resemble this:
+        <div class="code-snippet">
+          output$my_output_id <- renderText({
+            return(your_function_name(input$my_input_id))
+          })
+        </div>
+      </p>
     </ol>
-    <div class="code-snippet">
-    output$my_output_id <- renderTable({
-      # 1. Grab data from the UI using the input ID
-      user_selection <- input$my_input_id
-      
-      # 2. Give that data to your function
-      result <- your_function_name(user_selection)
-      
-      # 3. Return the result to be displayed
-      return(result)
-    })</div>
+
+    <h2>Example</h2>
+    <p>asdasd</p>
     
-    <div class="popup note">
-      <div class="popup-header">The Rules of the Handshake:</div>
-      <ul>
-        <li><strong>Inputs</strong> are read-only. You use them like variables: <span class="code-snippet">input$my_input_id</span>.</li>
-        <li><strong>Outputs</strong> are containers. You assign data to them: <span class="code-snippet">output$my_output_id &lt;- ...</span>.</li>
-        <li><strong>Render functions</strong> act as the glue. You must match the render function to the output type (e.g., <span class="code-snippet">renderTable</span> for <span class="code-snippet">tableOutput</span>).</li>
-      </ul>
-    </div>
-  
   </body>
 </html>
