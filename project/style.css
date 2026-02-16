@@ -65,3 +65,17 @@ body {
   border-radius: 4px;
   display: inline-block;
 }
+
+.image-container {
+  margin: 20px 0;
+  text-align: center; /* Optional: centers the image in the container */
+}
+
+.image-container img {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
