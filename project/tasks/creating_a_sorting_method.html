@@ -112,7 +112,7 @@
       </li>
       <div class="popup info">
         <div class="popup-header">Note:</div>
-        There are a lot more useful functions in dplyr, the table management package My Favorite Albums uses. <a href="https://nyu-cdsc.github.io/learningr/assets/data-transformation.pdf" target="_blank" rel="dplyr cheat sheet">This cheat sheat</a>, especially the sections <span class="ui-element">Manipulate Cases</span>, <span class="ui-element">Manipulate Variables</span>, and <span class="ui-element">Summary Functions</span> sections can be useful.
+        There are a lot more useful functions in dplyr, the table management package My Favorite Albums uses. <a href="https://nyu-cdsc.github.io/learningr/assets/data-transformation.pdf" target="_blank" rel="dplyr cheatsheet">This cheatsheet</a>, especially the sections <span class="ui-element">Manipulate Cases</span>, <span class="ui-element">Manipulate Variables</span>, and <span class="ui-element">Summary Functions</span> sections can be useful.
       </div>
     </ul>
     <p>To have your function return the data you calculated, assign a variable with that data as the last line of code in the function.</p>
@@ -244,14 +244,39 @@
       </li>
       <p>
         In the end, your code should resemble this:
-        <pre><div class="code-snippet">output$my_output_id <- renderText({ <br>
-  return(your_function_name(input$my_input_id)) <br>
-})</div></pre>
+        <div class="code-block">output$my_output_id <- renderText({
+          return(your_function_name(input$my_input_id)) <br>
+        })</div>
       </p>
     </ol>
 
     <h2>Example</h2>
-    <p>asdasd</p>
-    
+    <p>To guide you through writing a function, we will be writing a function that lists every album in the database, sorted so the latest albums appear first, displaying their release date, name, and artist.</p>
+    <ol>
+      <li>Create a new file called <span class="ui-element">list_albums</span></li>
+      <li>
+        First, we want to sort <span class="code-snippet">album_data</span> so that the recent albums appear first, which we can save to a variable.<br>
+        <span class="code-snippet">recent_albums <- album_data %>% arrange(desc(Year))</span>
+        <div class="popup note">
+          <div class="popup-header">Note:</div>
+          This uses code from the <a href="https://nyu-cdsc.github.io/learningr/assets/data-transformation.pdf" target="_blank" rel="dplyr cheatsheet">dplyr cheatsheet</a>.
+        </div>
+      </li>
+      <li>
+        Declare the function in it, which we will call <span class="code-snippet">list_albums</span> too. <br>
+       <span class="code-snippet">list_albums <- function() {}</span>
+      </li>
+      <li>
+        Inside the function, we want to use the <span class="code-snippet">select()</span> function to only take the year, album, and artist.
+        <span class="code-snippet">all_albums_cleaned <- select(recent_albums, Year, Album, Artist)</span>
+      </li>
+      <p>
+        Finally, we should have this:
+        <div class="code-block">recent_albums <- album_data %>% arrange(desc(Year))
+          list_albums <- function() {
+            all_albums_cleaned <- select(recent_albums, Year, Album, Artist)
+          }</div>
+      </p>
+    </ol>
   </body>
 </html>
