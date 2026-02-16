@@ -35,7 +35,7 @@
 
     <div class="popup warning">
       <div class="popup-header">Warning:</div>
-      While programmers with no experience are included for this guide, it will not go over every basic programming principle. It will cover core concepts needed to work with My Favorite Albums, but following a general programming guide like <a href="https://billpetti.github.io/Crash_course_in_R/" target="_blank" rel="RGuide">this one by Bill Petti</a> is highly encouraged.
+      While programmers with no experience are included for this guide, it will not go over every basic programming principle. It will cover core concepts needed to work with My Favorite Albums, but following a general programming guide like <a href="https://billpetti.github.io/Crash_course_in_R/" target="_blank" rel="R Guide">this one by Bill Petti</a> is highly encouraged.
     </div>
     
     <h3>Creating your Sorting Method(Function)</h3>
@@ -110,6 +110,10 @@
         If you just wanted to list every album with every artist, you can write: <br>
         <span class="code-snippet">allAlbumsAndArtists <- select(album_data, Artist, Album)</span>
       </li>
+      <div class="popup info">
+        <div class="popup-header">Note:</div>
+        There are a lot more useful functions in dplyr, the table management package My Favorite Albums uses. <a href="https://nyu-cdsc.github.io/learningr/assets/data-transformation.pdf" target="_blank" rel="dplyr cheat sheet">This cheat sheat</a>, especially the sections <span class="ui-element">Manipulate Cases</span>, <span class="ui-element">Manipulate Variables</span>, and <span class="ui-element">Summary Functions</span> sections can be useful.
+      </div>
     </ul>
     <p>To have your function return the data you calculated, assign a variable with that data as the last line of code in the function.</p>
 
