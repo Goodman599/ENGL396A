@@ -245,8 +245,8 @@
       <p>
         In the end, your code should resemble this:
         <div class="code-block">output$my_output_id <- renderText({
-          return(your_function_name(input$my_input_id)) <br>
-        })</div>
+  return(your_function_name(input$my_input_id)) <br>
+})</div>
       </p>
     </ol>
 
@@ -273,9 +273,9 @@
       <p>
         Finally, we should have this:
         <div class="code-block">recent_albums <- album_data %>% arrange(desc(Year))
-          list_albums <- function() {
-            all_albums_cleaned <- select(recent_albums, Year, Album, Artist)
-          }</div>
+list_albums <- function() {
+  all_albums_cleaned <- select(recent_albums, Year, Album, Artist)
+}</div>
       </p>
     </ol>
   </body>
