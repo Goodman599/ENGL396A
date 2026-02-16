@@ -19,10 +19,53 @@
           If you don't know what a .csv file is, see  <a href="#">here</a>.
       </div>
     </p>
+
+    <h3>Creating your File</h3>
+    <p>To start creating your own sorting method, first you need to create a file to house it in.</p>
+    <ol>
+      <li>
+        In the bottom left of RStudio, make sure you are in <span class="ui-element">MyFavoriteAlbums-main</span> and click <span class="ui-element">New File</span>.
+        <div class="image-container">
+          <img src="rstudio_new_file_tutorial.png" alt="Screenshot of RStudio showing the New File button" style="max-width:100%; height:auto; margin: 10px 0;">
+        </div>
+      </li>
+      <li>Select <span class="ui-element">R Script</span></li>
+      <li>Name the file according to what you plan for the sorting method to do. For example, you can call a sorting method that sorts albums alphabetically as <span class="ui-element">alphebetical_sort.R</span>. Then click <span class="ui-element">OK</span></li>
+    </ol>
+
+    <div class="popup warning">
+      <div class="popup-header">Warning:</div>
+      While programmers with no experience are included for this guide, it will not go over every basic programming principle. It will cover core concepts needed to work with My Favorite Albums, but following a general programming guide like <a href="https://billpetti.github.io/Crash_course_in_R/ target="_blank" rel="RGuide">this one by Bill Petti</a> is highly encouraged.
+    </div>
+    
+    <h3>Creating your Sorting Method(Function)</h3>
+    <p>You need to give your sorting method, called functions, a name for My Favorite Albums to recognise it. The crux of a function is to process data, and you can have many different functions, usually called helper functions, in one file.</p>
+    <ol>
+      <li>
+        In the editor on the top right of RStudio, enter the name of the function. 
+        <div class="popup note">
+          <div class="popup-header">Note:</div>
+          There are a few restrictions on what you can name your functions:
+          <ul>
+            <li>A function name must start with a letter and can be a combination of letters, digits, period(.), and underscore(_). </li>
+            <li>A function name cannot start with a number, period(.) or underscore (_) </li>
+            <li>Function names are case-sensitive (sorter, Sorter, and SORTER are three different functions)</li>
+          </ul>
+        </div>
+      </li>
+      <li>Type the assignment operator <span class="code-snippet"><-</span></li>
+      <li>
+        Enter the code <span class="code-snippet">function(){}</span>
+        <ul>
+          <li>Between the parentheses(), you can enter <a href="#variables">variables</a> separated by commas. Using it, you can pass data from elsewhere, such as selectors and sliders, to your functions.</li>
+          <li>Between the curly braces{}, you are free to add new lines, and is where you will be writing more code</li>
+        </ul>
+      </li>
+    </ol>
     
     <h3>Filtering the .csv Table</h3>
     <ul>
-      <li>
+      <li id="variables">
         <strong>Variable Assignment:</strong> To save data for future use, type the name of the variable (data storer), followed by a <span class="code-snippet"><-</span>, then the data you want to store. <br>
         <span class="code-snippet">myVariable <- myData</span> <br>
         <span class="code-snippet">myFavoriteYear <- 1993</span>
@@ -30,7 +73,7 @@
           <div class="popup-header">Note:</div>
           There are a few restrictions on what you can name your variables:
           <ul>
-            <li>A variable name must start with a letter and can be a combination of letters, digits, period(.) and underscore(_). </li>
+            <li>A variable name must start with a letter and can be a combination of letters, digits, period(.), and underscore(_). </li>
             <li>A variable name cannot start with a number, period(.) or underscore (_) </li>
             <li>Variable names are case-sensitive (age, Age and AGE are three different variables)</li>
           </ul>
