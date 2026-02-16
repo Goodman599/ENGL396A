@@ -131,37 +131,50 @@
       <li>Open <span class="ui-element">app.R</span>.</li>
       <li>
         Add your file to the "source" list at the top of the script.<br>
-        <span class="code-snippet">source("<span class="placeholder">name_of_your_file.R</span>")</span>
+        <span class="code-snippet">source("<span class="placeholder">nameOfYourFile.R</span>")</span>
       </li>
     </ol>
-    
-    <h3>2. Design the Layout (app_ui.R)</h3>
+    <p>Now, My Favorite Albums knows your custom function exists, but still doesn't know how to use or show it.</p>
+
+    <h3>Design the Layout in app_ui.R</h3>
     <p>
-      The <span class="ui-element">app_ui.R</span> file is where you define the <strong>Placeholders</strong>. You need a tab for the page, an <strong>Input</strong> for the user to interact with, and an <strong>Output</strong> for the data to appear.
+      The <span class="ui-element">app_ui.R</span> file is where you define placeholders for what will be shown on screen. You need a tab for the page, which you can fill with <span class="ui-element">Input</span>s for the user to interact with, and an <span class="ui-element">Output</span>s for the data to appear.
     </p>
-    
-    <div class="code-snippet" style="display: block; white-space: pre; margin: 10px 0; padding: 15px;">
-    tabPanel("My New Tab",
+    <ol>
+      <li>
+        Begin with <span class="code-snippet">tabPanel()</span>, putting the name of the tab in quotes between the parentheses. <br>
+        <span class="code-snippet>tabPanel("My New Tab")</span>
+      </li>
+      <li>
+        Then, you can add inputs and outputs to the page. Here's a short list of potential inputs and outputs you can use:
+        <ul>
+          <li><span class="code-snippet">selectInput</span>: Creates a dropdown menu.</li>
+          <li><span class="code-snippet">sliderInput</span>: Creates a sliding number scale.</li>
+          <br>
+          <li><span class="code-snippet">tableOutput</span>: A placeholder for data tables.</li>
+          <li><span class="code-snippet">plotOutput</span>: A placeholder for graphs or charts.</li>
+        </ul>
+        <div class="popup-info">
+          <div class="popup-header">Note:</div>
+          There are many different inputs and outputs, all of which must be used differently. <a href="https://github.com/rstudio/cheatsheets/blob/main/shiny.pdf", rel="Shiny Cheatsheet" target="_blank">This Cheatsheet</a>, especially the <span class="ui-element"></span> and <span class="ui-element"></span> sections, lists the different functions and how to use them. <br>
+          You can ignore the ellipses (...) that the cheatsheet uses. They are optional parameters, and will work perfectly without them.
+      </li>
+      An example tab panel could look like this:
+      <div class="code-snippet">
+        tabPanel("My New Tab",
              # Input: How the user talks to the app
              selectInput("my_input_id", "Choose an Option:", choices), 
              
              # Output: Where the result appears
              tableOutput("my_output_id")
-    )</div>
-    
-    <div class="popup info">
-      <div class="popup-header">UI Component Cheat Sheet:</div>
-      <ul>
-        <li><span class="code-snippet">selectInput</span>: Creates a dropdown menu.</li>
-        <li><span class="code-snippet">sliderInput</span>: Creates a sliding number scale.</li>
-        <li><span class="code-snippet">tableOutput</span>: A placeholder for data tables.</li>
-        <li><span class="code-snippet">plotOutput</span>: A placeholder for graphs or charts.</li>
-      </ul>
-    </div>
-    
-    <h3>3. Build the Connection (app_server.R)</h3>
+      )</div>
+    </ol>
+    <p>Now, My Favorite Albums knows how to display the information obtained from your function. However, it still does not know how to use the function itself.</p>
+
+          
+    <h3>Build the Connection (app_server.R)</h3>
     <p>
-      The <span class="ui-element">app_server.R</span> file is the "brain." It takes the value from the <strong>Input</strong>, passes it to your <strong>Function</strong>, and sends the result back to the <strong>Output</strong> slot you created in the UI.
+      The <span class="ui-element">app_server.R</span> file is the "brain." It takes the value from the <span class="ui-element">Input</span>, passes it to your <span class="ui-element">Function</span>, and sends the result back to the <span class="ui-element">Output</span> slot you created in the UI.
     </p>
     
     
