@@ -148,15 +148,16 @@
       <li>
         Then, you can add inputs and outputs to the page. Here's a short list of potential inputs and outputs you can use:
         <ul>
-          <li><span class="code-snippet">selectInput</span>: Creates a dropdown menu.</li>
-          <li><span class="code-snippet">sliderInput</span>: Creates a sliding number scale.</li>
+          <li><span class="code-snippet">selectInput()</span>: Creates a dropdown menu.</li>
+          <li><span class="code-snippet">sliderInput()</span>: Creates a sliding number scale.</li>
           <br>
-          <li><span class="code-snippet">tableOutput</span>: A placeholder for data tables.</li>
-          <li><span class="code-snippet">plotOutput</span>: A placeholder for graphs or charts.</li>
+          <li><span class="code-snippet">tableOutput()</span>: A placeholder for data tables.</li>
+          <li><span class="code-snippet">plotOutput()</span>: A placeholder for graphs or charts.</li>
         </ul>
         <div class="popup-info">
           <div class="popup-header">Note:</div>
           There are many different inputs and outputs, all of which must be used differently. <a href="https://github.com/rstudio/cheatsheets/blob/main/shiny.pdf", rel="Shiny Cheatsheet" target="_blank">This Cheatsheet</a>, especially the <span class="ui-element"></span> and <span class="ui-element"></span> sections, lists the different functions and how to use them. <br>
+          <strong>As a general rule, the first entry in the parentheses() will always be the name, or ID, of the input/output. </strong><br>
           You can ignore the ellipses (...) that the cheatsheet uses. They are optional parameters, and will work perfectly without them.
       </li>
       An example tab panel could look like this:
@@ -173,13 +174,40 @@
 
           
     <h3>Build the Connection (app_server.R)</h3>
-    <p>
-      The <span class="ui-element">app_server.R</span> file is the "brain." It takes the value from the <span class="ui-element">Input</span>, passes it to your <span class="ui-element">Function</span>, and sends the result back to the <span class="ui-element">Output</span> slot you created in the UI.
-    </p>
-    
-    
-    
-    <div class="code-snippet" style="display: block; white-space: pre; margin: 10px 0; padding: 15px;">
+    <p>The <span class="ui-element">app_server.R</span> file is the "brain." It takes the value from the <span class="ui-element">Input</span>, passes it to your <span class="ui-element">Function</span>, and sends the result back to the <span class="ui-element">Output</span> slot you created in the UI.</p>
+    <ol>
+      <li>Start with <span class="code-snippet">output$</span>, followed by the placeholder UI element ID you defined in <span class="ui-element">app_UI.R</span> you want to write to.</li>
+      <li>Follow that in the same line with <span class="code-snippet"><-</span> and a render method, such as a table, plain text, or graph plot. The render method must correspond with the placeholder type in app_ui.R. More details will be given later.</li>
+      <li>
+        Then, enter <span class="code-snippet">({})</span>. In the braces{}, if you are
+        <ul>
+          <li>
+            Displaying unchanging text: Write <span class="code-snippet">HTML("<span class="placeholder">Your text here.</span>")</span><br>
+            To format your text, enclose it with special HTML tags:
+            <ul>
+              <li>&lt;h1&gt;&lt;/h1&gt; - &lt;h6&gt;&lt;/h6&gt; are headers, which &lt;h1&gt; being the biggest.</li>
+              <li>&lt;br&gt; is a line break.</li>
+              <li>&lt;p&gt;&lt;/p&gt; marks paragraphs.</li>
+            </ul>
+          </li>
+          <li>
+            Displaying dynamic data that changes based on data and inputs:
+            <ol>
+              <li>Type <span class="code-snippet">return()</span></li>
+              <li>In the parentheses(), enter the <strong>exact</strong> name of your function followed by another set of parentheses()</li>
+              <li>
+                If your function requires user input data or parameters, for each parameter:
+                <ol>
+                  <li>Start with <span class="code-snippet">input$</span></li>
+                  <li>Follow that with the ID of the input as defined in app_UI.R.</li>
+                </ol>
+              </li>
+            </ol>
+          </li>
+        </ul>
+      </li>
+    </ol>
+    <div class="code-snippet">
     output$my_output_id <- renderTable({
       # 1. Grab data from the UI using the input ID
       user_selection <- input$my_input_id
@@ -198,39 +226,6 @@
         <li><strong>Outputs</strong> are containers. You assign data to them: <span class="code-snippet">output$my_output_id &lt;- ...</span>.</li>
         <li><strong>Render functions</strong> act as the glue. You must match the render function to the output type (e.g., <span class="code-snippet">renderTable</span> for <span class="code-snippet">tableOutput</span>).</li>
       </ul>
-    </div>
-    
-    <h3>Summary: What connects to what?</h3>
-    <table border="1" style="width:100%; border-collapse: collapse; margin: 10px 0;">
-      <thead>
-        <tr style="background-color: #f2f2f2;">
-          <th style="padding: 8px;">Goal</th>
-          <th style="padding: 8px;">UI Placeholder (app_ui.R)</th>
-          <th style="padding: 8px;">Server Connection (app_server.R)</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td style="padding: 8px;">Display a Table</td>
-          <td style="padding: 8px;"><span class="code-snippet">tableOutput("abc")</span></td>
-          <td style="padding: 8px;"><span class="code-snippet">output$abc &lt;- renderTable({...})</span></td>
-        </tr>
-        <tr>
-          <td style="padding: 8px;">Display a Graph</td>
-          <td style="padding: 8px;"><span class="code-snippet">plotOutput("xyz")</span></td>
-          <td style="padding: 8px;"><span class="code-snippet">output$xyz &lt;- renderPlot({...})</span></td>
-        </tr>
-        <tr>
-          <td style="padding: 8px;">Display a Header</td>
-          <td style="padding: 8px;"><span class="code-snippet">htmlOutput("title")</span></td>
-          <td style="padding: 8px;"><span class="code-snippet">output$title &lt;- renderUI({...})</span></td>
-        </tr>
-      </tbody>
-    </table>
-    
-    <div class="popup warning">
-      <div class="popup-header">Warning:</div>
-      If your app runs but the table is empty, check your <strong>IDs</strong>. The name inside <span class="code-snippet">tableOutput("my_table")</span> must match the name in <span class="code-snippet">output$my_table</span> exactly!
     </div>
   
   </body>
