@@ -111,5 +111,75 @@
         <span class="code-snippet">allAlbumsAndArtists <- select(album_data, Artist, Album)</span>
       </li>
     </ul>
+    <p>To have your function return the data you calculated, assign a variable with that data as the last line of code in the function.</p>
+
+
+    <h2>Incorporating New Methods into the App</h2>
+    <p>
+      Once you have written your custom R functions, you need to "wire" them into the main application. Because My Favorite Albums uses a modular structure, you will need to update three specific files: <span class="code-snippet">app.R</span>, <span class="code-snippet">app_ui.R</span>, and <span class="code-snippet">app_server.R</span>.
+    </p>
+    
+    <h3>Registering the Script (app.R)</h3>
+    <p>
+      The <span class="code-snippet">app.R</span> file acts as the project manager. It needs to know your new script exists so it can load your functions into memory.
+    </p>
+    <ol>
+      <li>Open <span class="ui-element">app.R</span>.</li>
+      <li>Locate the list of <span class="code-snippet">source()</span> commands at the top of the file.</li>
+      <li>
+        Add a new line for your file. For example:
+        <br><span class="code-snippet">source("alphabetical_sort.R")</span>
+      </li>
+    </ol>
+    <div class="popup info">
+      <div class="popup-header">Note:</div>
+      This step is crucial! If you don't source the file here, the app won't be able to find your function, even if the file is in the right folder.
+    </div>
+    
+    <h3>Designing the Interface (app_ui.R)</h3>
+    <p>
+      The <span class="code-snippet">app_ui.R</span> file controls the layout. You need to create a new "Tab" so users can actually see your analysis.
+    </p>
+    <ol>
+      <li>Open <span class="ui-element">app_ui.R</span> and find the <span class="code-snippet">tabsetPanel</span> section.</li>
+      <li>
+        Add a new <span class="code-snippet">tabPanel</span> entry inside the list. It should look like this:
+        <div class="code-snippet" style="display: block; white-space: pre; margin: 10px 0; padding: 10px;">
+    tabPanel("Alphabetical Sort",
+             htmlOutput("alpha_title"),
+             tableOutput("alpha_table"))</div>
+      </li>
+    </ol>
+    <div class="popup note">
+      <div class="popup-header">Definition:</div>
+      The <span class="code-snippet">tableOutput("alpha_table")</span> is a placeholder. It tells the UI exactly where to draw the table once the server generates it.
+    </div>
+    
+    <h3>Connecting the Logic (app_server.R)</h3>
+    <p>
+      The <span class="code-snippet">app_server.R</span> file is the bridge between your data and the screen.
+    </p>
+    <ol>
+      <li>Open <span class="ui-element">app_server.R</span>.</li>
+      <li>
+        Inside the <span class="code-snippet">server</span> function, add a block to "render" your table:
+        <div class="code-snippet" style="display: block; white-space: pre; margin: 10px 0; padding: 10px;">
+    output$alpha_table <- renderTable({
+      return(your_function_name(album_data))
+    })</div>
+      </li>
+    </ol>
+    
+    
+    
+    <div class="popup warning">
+      <div class="popup-header">Warning:</div>
+      The ID you use in the UI (e.g., <span class="code-snippet">"alpha_table"</span>) must match the ID in the Server (e.g., <span class="code-snippet">output$alpha_table</span>) exactly, including capitalization!
+    </div>
+    
+    <p>
+      Once these three steps are complete, click <span class="ui-element">Run App</span> in RStudio. Your new tab should appear with your custom analysis visible.
+    </p>
+  
   </body>
 </html>
