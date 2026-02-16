@@ -1,1 +1,61 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <title>Creating a Sorting Method</title>
+  </head>
+  <body>
+    <h1>Creating and Adding a Sorting Method</h1>
+    <p>
+      If you want to get more technical and customize how you view your music, you need to create your own sorting method. This guide is for all skill levels, so don't worry if this is your first time coding! <br>
+      By using <span class="ui-element">dplyr</span>, you can create new ways to filter and rank your data.
+    </p>
 
+    <h2>Creating your Analysis Method</h2>
+    <p>
+      Most analysis methods in My Favorite Albums involve taking your main dataset and "piping" it through a series of functions. This section will be a rundown on some important functions you may use during the filtering process. <br>
+      We will imagine the .csv file as a spreadsheet, with each row as an album and each column as a data entry.
+      <div class="popup warning">
+          <div class="popup-header">Warning:</div>
+          If you don't know what a .csv file is, see  <a href="#">here</a>.
+      </div>
+    </p>
+    
+    <h3>Filtering the .csv Table</h3>
+    <ul>
+      <li>
+        <strong>Variable Assignment:</strong> To save data for future use, type the name of the variable (data storer), followed by a <span class="code-snippet"><-</span>, then the data you want to store. <br>
+        <span class="code-snippet">myVariable <- myData</span> <br>
+        <span class="code-snippet">myFavoriteYear <- 1993</span>
+      </li>
+    </ul>
+
+    
+
+    <h2>Adding your analysis method to My Favorite Albums</h2>
+    <p>Once your R code works correctly, you need to integrate it into the user interface so you can select it from the navigation menu.</p>
+    
+    <ol>
+      <li>Open <span class="ui-element">app.R</span> in RStudio.</li>
+      <li>
+        Locate the <span class="code-snippet">server</span> function where the data processing happens.
+        <ul>
+          <li>This is where you will paste the <span class="ui-element">dplyr</span> logic you created in the previous section.</li>
+        </ul>
+      </li>
+      <li>
+        Update the <span class="code-snippet">ui</span> (User Interface) section to add a new button or menu item.
+        <div class="image-container">
+          <img src="rstudio_ui_edit_tutorial.png" alt="Screenshot of RStudio showing the UI code block where navigation items are added" style="max-width:100%; height:auto; margin: 10px 0;">
+        </div>
+      </li>
+      <li>Click <span class="ui-element">Run App</span> to test your new sorting method in the browser.</li>
+    </ol>
+
+    <div class="popup warning">
+      <div class="popup-header">Warning:</div>
+      Ensure your column names in the code match the headers in your <span class="code-snippet">album-rankings.csv</span> exactly (e.g., "Rating" with a capital R).
+    </div>
+
+    <p>For more help with the code syntax, refer back to the <a href="#">dplyr crash course</a>.</p>
+  </body>
+</html>
