@@ -111,31 +111,5 @@
         <span class="code-snippet">allAlbumsAndArtists <- select(album_data, Artist, Album)</span>
       </li>
     </ul>
-
-    
-
-    <h2>Adding your analysis method to My Favorite Albums</h2>
-    <p>Once your R code works correctly, you need to integrate it into the user interface so you can select it from the navigation menu.</p>
-    
-    <ol>
-      <li>Open <span class="ui-element">app.R</span> in RStudio.</li>
-      <li>
-        Locate the <span class="code-snippet">server</span> function where the data processing happens.
-        <ul>
-          <li>This is where you will paste the <span class="ui-element">dplyr</span> logic you created in the previous section.</li>
-        </ul>
-      </li>
-      <li>
-        Update the <span class="code-snippet">ui</span> (User Interface) section to add a new button or menu item.
-        <div class="image-container">
-          <img src="rstudio_ui_edit_tutorial.png" alt="Screenshot of RStudio showing the UI code block where navigation items are added" style="max-width:100%; height:auto; margin: 10px 0;">
-        </div>
-      </li>
-      <li>Click <span class="ui-element">Run App</span> to test your new sorting method in the browser.</li>
-    </ol>
-
-    
-
-    <p>For more help with the code syntax, refer back to the <a href="#">dplyr crash course</a>.</p>
   </body>
 </html>
