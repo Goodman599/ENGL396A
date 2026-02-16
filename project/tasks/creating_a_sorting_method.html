@@ -118,22 +118,22 @@
     <p>To have your function return the data you calculated, assign a variable with that data as the last line of code in the function.</p>
 
 
-    <h2>The Skeleton Guide to Adding Features</h2>
+    <h2>Adding Your Function To My Favorite Albums</h2>
     <p>
-      Adding a new feature follows a specific "skeleton." You start by telling the app your file exists, then you design the interface, and finally, you connect the data. Think of it like building a house: first you hire the crew, then you frame the walls, and then you hook up the plumbing.
+      Adding a new feature follows a specific "skeleton." You start by telling the app your file exists, then you design the interface, and finally, you connect the data.
     </p>
     
-    <h3>1. Register Your Script (app.R)</h3>
+    <h3>Register Your Script in app.R</h3>
     <p>
       The <span class="ui-element">app.R</span> file is the project manager. Before the app can use your custom function, it needs to know the file exists. 
     </p>
     <ol>
       <li>Open <span class="ui-element">app.R</span>.</li>
-      <li>Add your file to the "source" list at the top of the script.</li>
+      <li>
+        Add your file to the "source" list at the top of the script.<br>
+        <span class="code-snippet">source("<span class="placeholder">name_of_your_file.R</span>")</span>
+      </li>
     </ol>
-    
-    <div class="code-snippet" style="display: block; white-space: pre; margin: 10px 0; padding: 10px;">
-    source("name_of_your_file.R")</div>
     
     <h3>2. Design the Layout (app_ui.R)</h3>
     <p>
