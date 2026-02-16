@@ -180,7 +180,40 @@
     <p>The <span class="ui-element">app_server.R</span> file is the "brain." It takes the value from the <span class="ui-element">Input</span>, passes it to your <span class="ui-element">Function</span>, and sends the result back to the <span class="ui-element">Output</span> slot you created in the UI.</p>
     <ol>
       <li>Start with <span class="code-snippet">output$</span>, followed by the placeholder UI element ID you defined in <span class="ui-element">app_UI.R</span> you want to write to.</li>
-      <li>Follow that in the same line with <span class="code-snippet"><-</span> and a render method, such as a table, plain text, or graph plot. The render method must correspond with the placeholder type in app_ui.R. More details will be given later.</li>
+      <li>
+        Follow that in the same line with <span class="code-snippet"><-</span> and a render method, such as a table, plain text, or graph plot. The render method must correspond with the placeholder type in app_ui.R.
+        <table>
+          <thead>
+            <tr>
+              <th>If you want to display...</th>
+              <th>Use this in app_ui.R</th>
+              <th>Use this in app_server.R</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>HTML / Styled Text</strong></td>
+              <td><span class="code-snippet">htmlOutput("id")</span></td>
+              <td><span class="code-snippet">renderUI({...})</span></td>
+            </tr>
+            <tr>
+              <td><strong>Plain Text / Numbers</strong></td>
+              <td><span class="code-snippet">textOutput("id")</span></td>
+              <td><span class="code-snippet">renderText({...})</span></td>
+            </tr>
+            <tr>
+              <td><strong>Data Tables</strong></td>
+              <td><span class="code-snippet">tableOutput("id")</span></td>
+              <td><span class="code-snippet">renderTable({...})</span></td>
+            </tr>
+            <tr>
+              <td><strong>Graphs / Plots</strong></td>
+              <td><span class="code-snippet">plotOutput("id")</span></td>
+              <td><span class="code-snippet">renderPlot({...})</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
       <li>
         Then, enter <span class="code-snippet">({})</span>. In the braces{}, if you are
         <ul>
