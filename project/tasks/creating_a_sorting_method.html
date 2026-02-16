@@ -26,6 +26,41 @@
         <strong>Variable Assignment:</strong> To save data for future use, type the name of the variable (data storer), followed by a <span class="code-snippet"><-</span>, then the data you want to store. <br>
         <span class="code-snippet">myVariable <- myData</span> <br>
         <span class="code-snippet">myFavoriteYear <- 1993</span>
+        <div class="popup note">
+          <div class="popup-header">Note:</div>
+          There are a few restrictions on what you can name your variables:
+          <ul>
+            <li>A variable name must start with a letter and can be a combination of letters, digits, period(.) and underscore(_). </li>
+            <li>A variable name cannot start with a number, period(.) or underscore (_) </li>
+            <li>Variable names are case-sensitive (age, Age and AGE are three different variables)</li>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <strong>Filtering by column(data type):</strong> The <span class="code-snippet">filter()</span> function returns all of the rows that match a certain criteria. <br>
+        In the parenthesis, you must enter any data table. The data table storing all of your album rankings is stored in <span class="code-snippet">album_data</span>. Follow that with each condition separated with commas. <br>
+        The <span class="code-snippet">filter()</span> function creates a new data table with all of the valid entries, which can be fed into other functions. <br>
+        In R, there are 3 sets of operators you need to know:
+        <ul>
+          <li><span class="code-snippet">==</span>: Equals to</li>
+          <li><span class="code-snippet">></span>: Greater than and <span class="code-snippet">>=</span>: greater than or equal to</li>
+          <li><span class="code-snippet"><</span>: Less than and <span class="code-snippet"><=</span>: less than or equal to</li>
+        </ul>
+        For example, to find all the albums you've rated 10/10, you can do: <br>
+        <span class="code-snippet">tenStarAlbums <- filter(album_data, Rating == 10)</span>
+        If you only want to find those released before 2000, you can do: <br>
+        <span class="code-snippet">tenStarAlbums <- filter(album_data, Rating == 10, Year < 2000)</span>
+        <div class="popup note">
+          <div class="popup-header">Note:</div>
+          Make sure your condition names are the exact same as the .csv column headers.
+        </div>
+      </li>
+      <li>
+        <strong>Displaying specific data:</strong> The <span class="code-snippet">select()</span> function "trims" a data table down, removing unspecified columns. <br>
+        In the parenthesis, you must enter any data table. The data table storing all of your album rankings is stored in <span class="code-snippet">album_data</span>. Follow that with each data entry you want to list separated with commas, from left to right. <br>
+        The <span class="code-snippet">select()</span> function creates a new data table with all of the valid entries, which can be fed into other functions. <br>
+        If you just wanted to list every album with every artist, you can write: <br>
+        <span class="code-snippet">allAlbumsAndArtists <- select(album_data, Artist, Album)</span>
       </li>
     </ul>
 
