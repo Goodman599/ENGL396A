@@ -1,0 +1,197 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <title>Creating a Sorting Method</title>
+  </head>
+  <body>
+    <h2>Reference: Sorting Methods</h2>
+    <p>The following table defines the logic, required inputs, and specific behaviors for each sorting method available in the My Favorite Albums interface.</p>
+    
+    <table>
+      <thead>
+        <tr>
+          <th>Method Name</th>
+          <th>Description</th>
+          <th>User Inputs / Filters</th>
+          <th>Behavioral Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Number One Albums</strong></td>
+          <td>Displays the single highest-rated album for each year within a specified range.</td>
+          <td>Year Range (Start Year to End Year)</td>
+          <td>If a year in the range contains no data, that year is automatically skipped in the display.</td>
+        </tr>
+        <tr>
+          <td><strong>Top Albums By Year</strong></td>
+          <td>Shows a complete ranked list of every album released in a specific year.</td>
+          <td>Single Year Selection</td>
+          <td><strong>Manual Action:</strong> Users must manually resolve any ranking ties for the selected year.</td>
+        </tr>
+        <tr>
+          <td><strong>Artists’ Albums</strong></td>
+          <td>Aggregates all favorited albums by a specific performer and provides a statistical summary.</td>
+          <td>Artist Name</td>
+          <td>Only artists already present in your imported dataset will appear as options.</td>
+        </tr>
+        <tr>
+          <td><strong>Favorite Artists</strong></td>
+          <td>Calculates and ranks your top 15 highest-rated artists based on average album scores.</td>
+          <td>Minimum Album Count; Toggle EPs/Live Albums</td>
+          <td>Useful for filtering out "one-hit wonders" or non-studio recordings.</td>
+        </tr>
+        <tr>
+          <td><strong>Artist Comparison</strong></td>
+          <td>Generates a line graph plotting the ratings of two specific artists over time.</td>
+          <td>Two Artist Names</td>
+          <td>Visualizes how your preference for an artist's discography has evolved compared to another.</td>
+        </tr>
+        <tr>
+          <td><strong>Vinyl</strong></td>
+          <td>Identifies "missing" physical media by listing highly-rated albums you do not own.</td>
+          <td>Minimum Rating Threshold (Min. 7)</td>
+          <td>Only displays albums where the "Vinyl" column in your CSV is left blank.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Reference: CSV Columns</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Column Name</th>
+          <th>Description</th>
+          <th>Requirement / Example</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Year</strong></td>
+          <td>The year the album was released.</td>
+          <td>Written as a number (e.g., <span class="code-snippet">1996</span>)</td>
+        </tr>
+        <tr>
+          <td><strong>Ranking</strong></td>
+          <td>Your rank for that album within that specific year.</td>
+          <td><span class="code-snippet">1</span> is your top favorite.</td>
+        </tr>
+        <tr>
+          <td><strong>Album</strong></td>
+          <td>The official title of the album.</td>
+          <td>e.g., <span class="code-snippet">Becoming X</span></td>
+        </tr>
+        <tr>
+          <td><strong>Artist</strong></td>
+          <td>The name of the performer or group.</td>
+          <td>e.g., <span class="code-snippet">Sneaker Pimps</span></td>
+        </tr>
+        <tr>
+          <td><strong>Rating</strong></td>
+          <td>Your personal score for the music.</td>
+          <td>Scale of <span class="code-snippet">1</span> to <span class="code-snippet">10</span></td>
+        </tr>
+        <tr>
+          <td><strong>Vinyl</strong></td>
+          <td>Indicates physical vinyl ownership.</td>
+          <td>Enter <span class="code-snippet">v</span> if you do, or leave blank otherwise.</td>
+        </tr>
+        <tr>
+          <td><strong>EP</strong></td>
+          <td>Indicates if the release is an EP.</td>
+          <td>Enter <span class="code-snippet">EP</span> if it is, or leave blank otherwise.</td>
+        </tr>
+        <tr>
+          <td><strong>Live</strong></td>
+          <td>Indicates if it is a live recording.</td>
+          <td>Enter <span class="code-snippet">Live</span> if it is, or leave blank otherwise.</td>
+        </tr>
+      </tbody>
+    </table>
+
+  <h2>Reference: R & dplyr Data Functions</h2>
+  <p>Use these functions within your custom <code>.R</code> scripts to process and filter your album data.</p>
+  
+  <table>
+    <thead>
+      <tr>
+        <th>Function / Operator</th>
+        <th>Purpose</th>
+        <th>Syntax Example</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>filter()</code></td>
+        <td>Returns rows that meet specific criteria.</td>
+        <td><code>filter(album_data, Rating == 10)</code></td>
+      </tr>
+      <tr>
+        <td><code>select()</code></td>
+        <td>Keep only specific columns; removes the rest.</td>
+        <td><code>select(album_data, Artist, Album)</code></td>
+      </tr>
+      <tr>
+        <td><code>arrange(desc())</code></td>
+        <td>Sorts data. Use <code>desc()</code> for descending order.</td>
+        <td><code>arrange(desc(Year))</code></td>
+      </tr>
+      <tr>
+        <td><code>&lt;-</code></td>
+        <td>Assignment operator (stores data in a variable).</td>
+        <td><code>my_variable &lt;- 1993</code></td>
+      </tr>
+      <tr>
+        <td><code>==</code> , <code>&gt;</code> , <code>&lt;</code></td>
+        <td>Comparison operators: Equals, Greater than, Less than.</td>
+        <td><code>Year &gt;= 2000</code></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Reference: Shiny App Connectivity</h2>
+  <p>Use this mapping to connect your User Interface (<code>app_ui.R</code>) to your Server logic (<code>app_server.R</code>).</p>
+  
+  <table>
+    <thead>
+      <tr>
+        <th>Display Goal</th>
+        <th>UI Function (app_ui.R)</th>
+        <th>Server Function (app_server.R)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Data Tables</strong></td>
+        <td><code>tableOutput("id")</code></td>
+        <td><code>output$id &lt;- renderTable({...})</code></td>
+      </tr>
+      <tr>
+        <td><strong>Graphs / Plots</strong></td>
+        <td><code>plotOutput("id")</code></td>
+        <td><code>output$id &lt;- renderPlot({...})</code></td>
+      </tr>
+      <tr>
+        <td><strong>Plain Text</strong></td>
+        <td><code>textOutput("id")</code></td>
+        <td><code>output$id &lt;- renderText({...})</code></td>
+      </tr>
+      <tr>
+        <td><strong>Styled HTML</strong></td>
+        <td><code>htmlOutput("id")</code></td>
+        <td><code>output$id &lt;- renderUI({ HTML(...) })</code></td>
+      </tr>
+      <tr>
+        <td><strong>Dropdowns</strong></td>
+        <td><code>selectInput("id", "Label", choices)</code></td>
+        <td>Accessed via <code>input$id</code></td>
+      </tr>
+      <tr>
+        <td><strong>Sliders</strong></td>
+        <td><code>sliderInput("id", "Label", min, max)</code></td>
+        <td>Accessed via <code>input$id</code></td>
+      </tr>
+    </tbody>
+  </table>
+  </body>
+</html>
