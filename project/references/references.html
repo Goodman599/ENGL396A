@@ -110,7 +110,7 @@
     </table>
 
   <h2>Reference: R & dplyr Data Functions</h2>
-  <p>Use these functions within your custom <span class="code-snippet">.R</span class="code-snippet"> scripts to process and filter your album data.</p>
+  <p>Use these functions within your custom <span class="code-snippet">.R</span> scripts to process and filter your album data.</p>
   
   <table>
     <thead>
@@ -122,35 +122,35 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="code-snippet">filter()</span class="code-snippet"></td>
+        <td><span class="code-snippet">filter()</span></td>
         <td>Returns rows that meet specific criteria.</td>
-        <td><span class="code-snippet">filter(album_data, Rating == 10)</span class="code-snippet"></td>
+        <td><span class="code-snippet">filter(album_data, Rating == 10)</span></td>
       </tr>
       <tr>
-        <td><span class="code-snippet">select()</span class="code-snippet"></td>
+        <td><span class="code-snippet">select()</span></td>
         <td>Keep only specific columns; removes the rest.</td>
-        <td><span class="code-snippet">select(album_data, Artist, Album)</span class="code-snippet"></td>
+        <td><span class="code-snippet">select(album_data, Artist, Album)</span></td>
       </tr>
       <tr>
-        <td><span class="code-snippet">arrange() or arrange(desc())</span class="code-snippet"></td>
-        <td>Sorts data. Use <span class="code-snippet">desc()</span class="code-snippet"> for descending order.</td>
-        <td><span class="code-snippet">arrange(desc(Year))</span class="code-snippet"></td>
+        <td><span class="code-snippet">arrange()</span> or <span class="code-snippet">arrange(desc())</span></td>
+        <td>Sorts data. Use <span class="code-snippet">desc()</span> for descending order.</td>
+        <td><span class="code-snippet">arrange(desc(Year))</span></td>
       </tr>
       <tr>
-        <td><span class="code-snippet">&lt;-</span class="code-snippet"></td>
+        <td><span class="code-snippet">&lt;-</span></td>
         <td>Assignment operator (stores data in a variable).</td>
-        <td><span class="code-snippet">my_variable &lt;- 1993</span class="code-snippet"></td>
+        <td><span class="code-snippet">my_variable &lt;- 1993</span></td>
       </tr>
       <tr>
-        <td><span class="code-snippet">==</span class="code-snippet"> , <span class="code-snippet">&gt;</span class="code-snippet"> , <span class="code-snippet">&lt;</span class="code-snippet"></td>
+        <td><span class="code-snippet">==</span> , <span class="code-snippet">&gt;</span> , <span class="code-snippet">&lt;</span></td>
         <td>Comparison operators: Equals, Greater than, Less than.</td>
-        <td><span class="code-snippet">Year &gt;= 2000</span class="code-snippet"></td>
+        <td><span class="code-snippet">Year &gt;= 2000</span></td>
       </tr>
     </tbody>
   </table>
 
   <h2>Reference: Shiny App Connectivity</h2>
-  <p>Use this mapping to connect your User Interface (<span class="code-snippet">app_ui.R</span class="code-snippet">) to your Server logic (<span class="code-snippet">app_server.R</span class="code-snippet">).</p>
+  <p>Use this mapping to connect your User Interface (<span class="code-snippet">app_ui.R</span>) to your Server logic (<span class="code-snippet">app_server.R</span>).</p>
   
   <table>
     <thead>
@@ -163,33 +163,33 @@
     <tbody>
       <tr>
         <td><strong>Data Tables</strong></td>
-        <td><span class="code-snippet">tableOutput("id")</span class="code-snippet"></td>
-        <td><span class="code-snippet">output$id &lt;- renderTable({...})</span class="code-snippet"></td>
+        <td><span class="code-snippet">tableOutput("id")</span></td>
+        <td><span class="code-snippet">output$id &lt;- renderTable({...})</span></td>
       </tr>
       <tr>
         <td><strong>Graphs / Plots</strong></td>
-        <td><span class="code-snippet">plotOutput("id")</span class="code-snippet"></td>
-        <td><span class="code-snippet">output$id &lt;- renderPlot({...})</span class="code-snippet"></td>
+        <td><span class="code-snippet">plotOutput("id")</span></td>
+        <td><span class="code-snippet">output$id &lt;- renderPlot({...})</span></td>
       </tr>
       <tr>
         <td><strong>Plain Text</strong></td>
-        <td><span class="code-snippet">textOutput("id")</span class="code-snippet"></td>
-        <td><span class="code-snippet">output$id &lt;- renderText({...})</span class="code-snippet"></td>
+        <td><span class="code-snippet">textOutput("id")</span></td>
+        <td><span class="code-snippet">output$id &lt;- renderText({...})</span></td>
       </tr>
       <tr>
         <td><strong>Styled HTML</strong></td>
-        <td><span class="code-snippet">htmlOutput("id")</span class="code-snippet"></td>
-        <td><span class="code-snippet">output$id &lt;- renderUI({ HTML(...) })</span class="code-snippet"></td>
+        <td><span class="code-snippet">htmlOutput("id")</span></td>
+        <td><span class="code-snippet">output$id &lt;- renderUI({ HTML(...) })</span></td>
       </tr>
       <tr>
         <td><strong>Dropdowns</strong></td>
-        <td><span class="code-snippet">selectInput("id", "Label", choices)</span class="code-snippet"></td>
-        <td>Accessed via <span class="code-snippet">input$id</span class="code-snippet"></td>
+        <td><span class="code-snippet">selectInput("id", "Label", choices)</span></td>
+        <td>Accessed via <span class="code-snippet">input$id</span></td>
       </tr>
       <tr>
         <td><strong>Sliders</strong></td>
-        <td><span class="code-snippet">sliderInput("id", "Label", min, max)</span class="code-snippet"></td>
-        <td>Accessed via <span class="code-snippet">input$id</span class="code-snippet"></td>
+        <td><span class="code-snippet">sliderInput("id", "Label", min, max)</span></td>
+        <td>Accessed via <span class="code-snippet">input$id</span></td>
       </tr>
     </tbody>
   </table>
