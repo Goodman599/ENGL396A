@@ -109,89 +109,128 @@
       </tbody>
     </table>
 
-  <h2>Reference: R & dplyr Data Functions</h2>
-  <p>Use these functions within your custom <span class="code-snippet">.R</span> scripts to process and filter your album data.</p>
+    <h2>Reference: R & dplyr Data Functions</h2>
+    <p>Use these functions within your custom <span class="code-snippet">.R</span> scripts to process and filter your album data.</p>
+    
+    <table>
+      <thead>
+        <tr>
+          <th>Function / Operator</th>
+          <th>Purpose</th>
+          <th>Syntax Example</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="code-snippet">filter()</span></td>
+          <td>Returns rows that meet specific criteria.</td>
+          <td><span class="code-snippet">filter(album_data, Rating == 10)</span></td>
+        </tr>
+        <tr>
+          <td><span class="code-snippet">select()</span></td>
+          <td>Keep only specific columns; removes the rest.</td>
+          <td><span class="code-snippet">select(album_data, Artist, Album)</span></td>
+        </tr>
+        <tr>
+          <td><span class="code-snippet">arrange()</span> or <span class="code-snippet">arrange(desc())</span></td>
+          <td>Sorts data. Use <span class="code-snippet">desc()</span> for descending order.</td>
+          <td><span class="code-snippet">arrange(desc(Year))</span></td>
+        </tr>
+        <tr>
+          <td><span class="code-snippet">&lt;-</span></td>
+          <td>Assignment operator (stores data in a variable).</td>
+          <td><span class="code-snippet">my_variable &lt;- 1993</span></td>
+        </tr>
+        <tr>
+          <td><span class="code-snippet">==</span> , <span class="code-snippet">&gt;</span> , <span class="code-snippet">&lt;</span></td>
+          <td>Comparison operators: Equals, Greater than, Less than.</td>
+          <td><span class="code-snippet">Year &gt;= 2000</span></td>
+        </tr>
+      </tbody>
+    </table>
   
-  <table>
-    <thead>
-      <tr>
-        <th>Function / Operator</th>
-        <th>Purpose</th>
-        <th>Syntax Example</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="code-snippet">filter()</span></td>
-        <td>Returns rows that meet specific criteria.</td>
-        <td><span class="code-snippet">filter(album_data, Rating == 10)</span></td>
-      </tr>
-      <tr>
-        <td><span class="code-snippet">select()</span></td>
-        <td>Keep only specific columns; removes the rest.</td>
-        <td><span class="code-snippet">select(album_data, Artist, Album)</span></td>
-      </tr>
-      <tr>
-        <td><span class="code-snippet">arrange()</span> or <span class="code-snippet">arrange(desc())</span></td>
-        <td>Sorts data. Use <span class="code-snippet">desc()</span> for descending order.</td>
-        <td><span class="code-snippet">arrange(desc(Year))</span></td>
-      </tr>
-      <tr>
-        <td><span class="code-snippet">&lt;-</span></td>
-        <td>Assignment operator (stores data in a variable).</td>
-        <td><span class="code-snippet">my_variable &lt;- 1993</span></td>
-      </tr>
-      <tr>
-        <td><span class="code-snippet">==</span> , <span class="code-snippet">&gt;</span> , <span class="code-snippet">&lt;</span></td>
-        <td>Comparison operators: Equals, Greater than, Less than.</td>
-        <td><span class="code-snippet">Year &gt;= 2000</span></td>
-      </tr>
-    </tbody>
-  </table>
+    <h2>Reference: Shiny App Connectivity</h2>
+    <p>Use this mapping to connect your User Interface (<span class="code-snippet">app_ui.R</span>) to your Server logic (<span class="code-snippet">app_server.R</span>).</p>
+    
+    <table>
+      <thead>
+        <tr>
+          <th>Display Goal</th>
+          <th>UI Function (app_ui.R)</th>
+          <th>Server Function (app_server.R)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Data Tables</strong></td>
+          <td><span class="code-snippet">tableOutput("id")</span></td>
+          <td><span class="code-snippet">output$id &lt;- renderTable({...})</span></td>
+        </tr>
+        <tr>
+          <td><strong>Graphs / Plots</strong></td>
+          <td><span class="code-snippet">plotOutput("id")</span></td>
+          <td><span class="code-snippet">output$id &lt;- renderPlot({...})</span></td>
+        </tr>
+        <tr>
+          <td><strong>Plain Text</strong></td>
+          <td><span class="code-snippet">textOutput("id")</span></td>
+          <td><span class="code-snippet">output$id &lt;- renderText({...})</span></td>
+        </tr>
+        <tr>
+          <td><strong>Styled HTML</strong></td>
+          <td><span class="code-snippet">htmlOutput("id")</span></td>
+          <td><span class="code-snippet">output$id &lt;- renderUI({ HTML(...) })</span></td>
+        </tr>
+        <tr>
+          <td><strong>Dropdowns</strong></td>
+          <td><span class="code-snippet">selectInput("id", "Label", choices)</span></td>
+          <td>Accessed via <span class="code-snippet">input$id</span></td>
+        </tr>
+        <tr>
+          <td><strong>Sliders</strong></td>
+          <td><span class="code-snippet">sliderInput("id", "Label", min, max)</span></td>
+          <td>Accessed via <span class="code-snippet">input$id</span></td>
+        </tr>
+      </tbody>
+    </table>
 
-  <h2>Reference: Shiny App Connectivity</h2>
-  <p>Use this mapping to connect your User Interface (<span class="code-snippet">app_ui.R</span>) to your Server logic (<span class="code-snippet">app_server.R</span>).</p>
-  
-  <table>
-    <thead>
-      <tr>
-        <th>Display Goal</th>
-        <th>UI Function (app_ui.R)</th>
-        <th>Server Function (app_server.R)</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><strong>Data Tables</strong></td>
-        <td><span class="code-snippet">tableOutput("id")</span></td>
-        <td><span class="code-snippet">output$id &lt;- renderTable({...})</span></td>
-      </tr>
-      <tr>
-        <td><strong>Graphs / Plots</strong></td>
-        <td><span class="code-snippet">plotOutput("id")</span></td>
-        <td><span class="code-snippet">output$id &lt;- renderPlot({...})</span></td>
-      </tr>
-      <tr>
-        <td><strong>Plain Text</strong></td>
-        <td><span class="code-snippet">textOutput("id")</span></td>
-        <td><span class="code-snippet">output$id &lt;- renderText({...})</span></td>
-      </tr>
-      <tr>
-        <td><strong>Styled HTML</strong></td>
-        <td><span class="code-snippet">htmlOutput("id")</span></td>
-        <td><span class="code-snippet">output$id &lt;- renderUI({ HTML(...) })</span></td>
-      </tr>
-      <tr>
-        <td><strong>Dropdowns</strong></td>
-        <td><span class="code-snippet">selectInput("id", "Label", choices)</span></td>
-        <td>Accessed via <span class="code-snippet">input$id</span></td>
-      </tr>
-      <tr>
-        <td><strong>Sliders</strong></td>
-        <td><span class="code-snippet">sliderInput("id", "Label", min, max)</span></td>
-        <td>Accessed via <span class="code-snippet">input$id</span></td>
-      </tr>
-    </tbody>
-  </table>
+    <h2>Reference: Troubleshooting & Common Errors</h2>
+    <p>Use this table to diagnose issues when custom sorting methods or data files are not behaving as expected.</p>
+    <table>
+      <thead>
+          <tr>
+              <th>Issue</th>
+              <th>Likely Cause</th>
+              <th>Resolution</th>
+          </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>App fails to launch</strong></td>
+          <td>Script not "sourced."</td>
+          <td>Ensure <code>source("your_filename.R")</code> is included at the top of <strong>app.R</strong>.</td>
+        </tr>
+        <tr>
+          <td><strong>'Object not found'</strong></td>
+          <td>Case-sensitivity or typo.</td>
+          <td>R is case-sensitive; check that <code>album_data</code> is not written as <code>Album_Data</code>.</td>
+        </tr>
+        <tr>
+          <td><strong>Empty Table or Plot</strong></td>
+          <td>Criteria too strict.</td>
+          <td>Check your CSV; if you filter for <code>Rating == 11</code>, no results will be returned.</td>
+        </tr>
+        <tr>
+          <td><strong>Unexpected ',' error</strong></td>
+          <td>Syntax formatting error.</td>
+          <td>Check your UI list; every element in a <code>tabPanel</code> needs a comma <em>except</em> the last one.</td>
+        </tr>
+        <tr>
+          <td><strong>Graph doesn't update</strong></td>
+          <td>ID mismatch.</td>
+          <td>Ensure the ID in <code>plotOutput("my_id")</code> matches <code>output$my_id</code> exactly.</td>
+        </tr>
+      </tbody>
+    </table>
   </body>
 </html>
