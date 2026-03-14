@@ -1,4 +1,4 @@
-* [Home](index.html)
+* [Home](README.html)
 
 * [Getting Started]
   * [Using My Favorite Albums](tasks/using-my-favorite-albums.html)
