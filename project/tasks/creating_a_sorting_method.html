@@ -25,7 +25,7 @@
       </div>
     </p>
 
-    <h3 id="Creating-File">Creating your File</h3>
+    <h3 id="creating-file">Creating your File</h3>
     <p>To start creating your own sorting method, first you need to create a file to house it in.</p>
     <ol>
       <li>
@@ -38,7 +38,7 @@
       <li>Name the file according to what you plan for the sorting method to do. For example, you can call a sorting method that sorts albums alphabetically as <span class="ui-element">alphabetical_sort.R</span>. Then click <span class="ui-element">OK</span></li>
     </ol>
     
-    <h3 id="Adding-Functionality">Creating your Sorting Method(Function)</h3>
+    <h3 id="adding-functionality">Creating your Sorting Method(Function)</h3>
     <p>You need to give your sorting method, called functions, a name for My Favorite Albums to recognise it. The crux of a function is to process data, and you can have many different functions, usually called helper functions, in one file.</p>
     <ol>
       <li>
@@ -63,7 +63,7 @@
       </li>
     </ol>
     
-    <h3 id="Filter-Functions">Filtering the .csv Table</h3>
+    <h3 id="filter-functions">Filtering the .csv Table</h3>
     <ul>
       <li id="variables">
         <strong>Variable Assignment:</strong> To save data for future use, type the name of the variable (data storer), followed by a <span class="code-snippet"><-</span>, then the data you want to store. <br>
@@ -123,7 +123,7 @@
       Adding a new feature follows a specific "skeleton." You start by telling the app your file exists, then you design the interface, and finally, you connect the data.
     </p>
     
-    <h3 id="Registering">Register Your Script in app.R</h3>
+    <h3 id="registering">Register Your Script in app.R</h3>
     <p>
       The <span class="ui-element">app.R</span> file is the project manager. Before the app can use your custom function, it needs to know the file exists. 
     </p>
@@ -136,7 +136,7 @@
     </ol>
     <p>Now, My Favorite Albums knows your custom function exists, but still doesn't know how to use or show it.</p>
 
-    <h3 id="UI-design">Design the Layout in app_ui.R</h3>
+    <h3 id="ui-design">Design the Layout in app_ui.R</h3>
     <p>
       The <span class="ui-element">app_ui.R</span> file is where you define placeholders for what will be shown on screen. You need a tab for the page, which you can fill with <span class="ui-element">Input</span>s for the user to interact with, and an <span class="ui-element">Output</span>s for the data to appear.
     </p>
@@ -250,7 +250,7 @@
       </p>
     </ol>
 
-    <h2 id="Example">Example</h2>
+    <h2 id="example">Example</h2>
     <p>To guide you through writing a function, we will be writing a function that lists every album in the database, sorted so the latest albums appear first, displaying their release date, name, and artist.</p>
     <ol>
       <li>Create a new file called <span class="ui-element">list_albums</span></li>
