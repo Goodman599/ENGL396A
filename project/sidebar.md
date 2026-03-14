@@ -9,8 +9,8 @@
   * [Creating & Adding CSV Data](tasks/dataset.html)
   * [Filling the File](tasks/dataset.html#filling-csv)
 
-* [Creating a Sorting Method](tasks/creating_a_sorting_method.html)
-  * [Creating the File](tasks/creating_a_sorting_method.html#Creating-File)
+* Creating a Sorting Method
+  * [Creating the File](tasks/creating_a_sorting_method.html)
   * [Adding Functionality](tasks/creating_a_sorting_method.html#Adding-Functionality)
   * [Useful Functions](tasks/creating_a_sorting_method.html#Filter-Functions)
   * [Registering your Function](tasks/creating_a_sorting_method.html#Registering)
