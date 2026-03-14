@@ -1,5 +1,7 @@
 * [Home](README.html)
-* [Conceptual Overview](overview.html)
+* Conceptual Overview
+  * [For Users](concepts/user_overview.html)
+  * [For Developers](concepts/developer_overview.html)
 
 * Getting Started
   * [Using My Favorite Albums](tasks/using_MFA.html#title)
