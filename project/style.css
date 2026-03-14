@@ -26,11 +26,11 @@ body {
 }
 
 /* Color Variations */
-.note {
+.important {
   background-color: #fff9c4;
   color: #827717;
 }
-.note .popup-header {
+.important .popup-header {
   background-color: #f0e68c;
   color: #5d540d;
 }
