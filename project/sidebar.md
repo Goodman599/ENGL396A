@@ -1,5 +1,5 @@
 * [Home](README.html)
-* [Project Overview](tasks/overview.html)
+* [Project Overview](overview.html)
 
 * Getting Started
   * [Using My Favorite Albums](tasks/using_MFA.html)
