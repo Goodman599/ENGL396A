@@ -2,4 +2,4 @@
 
 # My Favorite Albums Docs
 
-[Get Started](tasks/README.html)
+[Get Started](README.html)
