@@ -2,4 +2,4 @@
 
 # My Favorite Albums Docs
 
-[Get Started](tasks/using_MFA.html)
+[Get Started](tasks/README.html)
