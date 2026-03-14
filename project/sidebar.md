@@ -11,8 +11,8 @@
 
 * Creating a Sorting Method
   * [Creating the File](tasks/creating_a_sorting_method.html#title)
-  * [Adding Functionality](tasks/creating_a_sorting_method.html#Adding-Functionality)
-  * [Useful Functions](tasks/creating_a_sorting_method.html#Filter-Functions)
-  * [Registering your Function](tasks/creating_a_sorting_method.html#Registering)
-  * [Adding the User Interface](tasks/creating_a_sorting_method.html#UI-design)
-  * [Example Custom Sorting Method](tasks/creating_a_sorting_method.html#Example)
+  * [Adding Functionality](tasks/creating_a_sorting_method.html#adding-functionality)
+  * [Useful Functions](tasks/creating_a_sorting_method.html#filter-functions)
+  * [Registering your Function](tasks/creating_a_sorting_method.html#registering)
+  * [Adding the User Interface](tasks/creating_a_sorting_method.html#ui-design)
+  * [Example Custom Sorting Method](tasks/creating_a_sorting_method.html#example)
