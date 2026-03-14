@@ -1,0 +1,62 @@
+<html>
+  <head>
+      <link rel="stylesheet" type="text/css" href="../style.css">
+      <title>MFA Overview</title>
+  </head>
+  <body>
+      <h1>Project Overview</h1>
+      <p>My Favorite Albums is software that allows you to analyze annual rankings of select albums. For users, it includes many sorting and viewing methods to organize these albums.</p>
+      
+      <p>By installing the software, developers can input their own favorite albums and analyze their selection.</p>
+  
+      <div class="popup info">
+          <div class="popup-header">Note:</div>
+          The My Favorite Albums software does not support hosting your own version online. Instructions on web hosting are not covered in this documentation.
+      </div>
+  
+      <h2>Key Definitions</h2>
+      <ul>
+          <li><strong>Favorite Album:</strong> An album featured in the data provided to MFA.</li>
+          <li><strong>Rating:</strong> A score from 1 to 10 inclusive.</li>
+          <li><strong>Ranking:</strong> Determined by rating and separated by year in descending order (1 is the highest).</li>
+      </ul>
+  
+      <hr>
+  
+      <h2>For Users</h2>
+      <p>This section details the user interface and how the sorting methods work.</p>
+      
+      <h3>The Navigation Bar</h3>
+      <p>The navigation bar at the top of the page contains links directing you to each sorting method.</p>
+  
+      <h3>Sorting Methods</h3>
+      <ul>
+          <li><strong>Number One Albums:</strong> Displays the highest-rated album for a given year range.</li>
+          <li><strong>Top Albums By Year:</strong> Shows every album released in a specific year, ranked.</li>
+          <li><strong>Artists’ Albums:</strong> Lists all favorited albums by a specific artist with a statistics summary.</li>
+          <li><strong>Favorite Artists:</strong> Finds your top 15 highest-rated artists based on custom criteria.</li>
+          <li><strong>Artist Comparison:</strong> Plots two artists against each other in a line graph over time.</li>
+          <li><strong>Vinyl:</strong> Suggests albums rated 7 or higher that you do not yet own on vinyl.</li>
+      </ul>
+  
+      <hr>
+  
+      <h2>For Developers</h2>
+      <p>MFA is built to be modular. Developers can personalize the experience in two ways: <strong>Inputting custom data</strong> and <strong>Adding new sorting methods</strong>.</p>
+  
+      <h3>What is a .csv file?</h3>
+      <p>MFA stores album data in <code>.csv</code> (comma-separated-values) format. It functions like a spreadsheet with the following headers:</p>
+      <p class="code-snippet">Year, Ranking, Album, Artist, Rating, Vinyl, EP, Live</p>
+  
+      <h3>The Tech Stack</h3>
+      <ul>
+          <li><strong>R:</strong> The programming language MFA runs on.</li>
+          <li><strong>RStudio:</strong> The recommended IDE (Integrated Development Environment) for editing MFA code and CSV files.</li>
+      </ul>
+  
+      <div class="popup info">
+          <div class="popup-header">Ease of Use:</div>
+          MFA is designed to be modular. You can experiment with new sorting methods without the risk of breaking the core software.
+      </div>
+  </body>
+</html>
