@@ -43,8 +43,8 @@
     <ol>
       <li>
         In the editor on the top right of RStudio, enter the name of the function. 
-        <div class="popup note">
-          <div class="popup-header">Note:</div>
+        <div class="popup important">
+          <div class="popup-header">Important:</div>
           There are a few restrictions on what you can name your functions:
           <ul>
             <li>A function name must start with a letter and can be a combination of letters, digits, period(.), and underscore(_). </li>
@@ -69,8 +69,8 @@
         <strong>Variable Assignment:</strong> To save data for future use, type the name of the variable (data storer), followed by a <span class="code-snippet"><-</span>, then the data you want to store. <br>
         <span class="code-snippet">myVariable <- myData</span> <br>
         <span class="code-snippet">myFavoriteYear <- 1993</span>
-        <div class="popup note">
-          <div class="popup-header">Note:</div>
+        <div class="popup important">
+          <div class="popup-header">Important:</div>
           There are a few restrictions on what you can name your variables:
           <ul>
             <li>A variable name must start with a letter and can be a combination of letters, digits, period(.), and underscore(_). </li>
@@ -98,8 +98,8 @@
         <span class="code-snippet">tenStarAlbums <- filter(album_data, Rating == 10)</span>
         If you only want to find those released before 2000, you can do: <br>
         <span class="code-snippet">tenStarAlbums <- filter(album_data, Rating == 10, Year < 2000)</span>
-        <div class="popup note">
-          <div class="popup-header">Note:</div>
+        <div class="popup important">
+          <div class="popup-header">Important:</div>
           Make sure your condition names are the exact same as the .csv column headers.
         </div>
       </li>
@@ -290,8 +290,8 @@ list_albums <- function() {
        htmlOutput("all_albums_title"),
        tableOutput("all_albums_table"))</div>
     
-    <div class="popup note>
-      <div class="popup-header">Note:</div>
+    <div class="popup important>
+      <div class="popup-header">Important:</div>
       Make sure that the previous <span class="code-snippet">tabPanel</span> entry has a comma at the end.
     </div>
 
