@@ -6,8 +6,9 @@
 <body>
     <h2 id="csv-structure">What is a .csv file?</h2>
     <p>
-      MFA stores data in <code>.csv</code> format. It functions like a spreadsheet with these headers: <br>
-      <span class="code-snippet">Year, Ranking, Album, Artist, Rating, Vinyl, EP, Live</span>
+      My Favorite Albums stores data in <code>.csv</code> format. CSV files represent a spreadsheet in a text format. For My Favorite Albums, the headers, or columns of the spreadsheet, are: <br>
+      <span class="code-snippet">Year, Ranking, Album, Artist, Rating, Vinyl, EP, Live</span> <br>
+      
     </p>
     <div class="popup important">
       <div class="popup-header">Note:</div>
@@ -22,6 +23,7 @@
     </ul>
 
     <h2 id="file-structure">File System Rundown:</h2>
+    <p>My Favorite Albums uses Shiny, an R library. The general file structure is:</p>
     <ul>
       <li><strong>Sorting methods (i.e. all_albums.R):</strong> A file containing the code required to run a sorting method.</li>
       <li><strong>app.R:</strong> The "hub" for My Favorite Albums. Contains references to every sorting method. References are required to run functions.</li>
