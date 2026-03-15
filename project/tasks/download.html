@@ -1,13 +1,13 @@
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="style.css">
-    <title>Downloading My Favorite Albums</title>
+    <title>Setting up My Favorite Albums</title>
   </head>
   <body>
-    <h1 id="title">Downloading My Favorite Albums</h1>
-    <p>If you want to edit My Favorite Albums, such as importing personal song preferences or adding new data analyzing methods, you need to download My Favorite Albums.</p>
+    <h1 id="title">Setting up My Favorite Albums</h1>
+    <p>If you want to edit My Favorite Albums, such as importing personal album preferences or adding new data analyzing methods, you need to download My Favorite Albums.</p>
     
-    <h2>Download R and RStudio</h2>
+    <h2 id="download-r">Download R and RStudio</h2>
     <p>My favorite album runs on the programming language R, and the primary workspace for it is RStudio.<br>
     If you don't have RStudio installed yet, the official download is <a target="_blank" rel="RStudio download" href="https://posit.co/downloads/">here</a>.<br>
     From the RStudio page, download R too.</p>
@@ -41,27 +41,24 @@
     <p>You should now be able to run any file in the My Favorite Albums folder using RStudio.</p>
 
     <h2>Set Up RStudio for My Favorite Albums</h2>
+    <div class="popup warning">
+      <div class="popup-header">Warning:</div>
+      If you have not installed R or RStudio yet, refer to the <a href="#download-r">Downloading R and RStudio</a> portion of the guide.
+    </div>
     <p>If this is your first time using RStudio, you're likely missing some key packages My Favorite Albums requires to work. Thankfully, downloading them is very straightforward:</p>
     <ol>
       <li>Open <span class="ui-element">app.R</span> using RStudio</li>
       <li>
-        At the top of the left half of RStudio, there should be a yellow warning stating you are missing packages. Click <span class="ui-element">Install</span> located to the right of the warning text.
-        <div class="image-container">
-          <img src="tasks/rstudio_package_tutorial.png" alt="Screenshot of RStudio showing the warning to install packages" style="max-width:100%; height:auto; margin: 10px 0;">
-        </div>
-        <ul>
-          <li>If not, at the top of the left half of RStudio, click <span class="ui-element">Run App</span>.</li>
-          <li>The install process can take a while.</li>
-        </ul>
+       In the bottom left of RStudio, called the developer console, run this command: <span class="code-snippet">install.packages(c("shiny", "ggplot2", "dplyr))</span>
+        <img src="tasks/rstudio_dev_console_highlighted.png" alt="A highlight of the developer console."  style="max-width:100%; height:auto; margin: 10px 0;">
       </li>
-      <li>In RStudio, open <span class="ui-element">compare_bands.R</span>, which requires another package. Repeat step 2.</li>
     </ol>
     <p>
-      Now, if you go back to <span class="ui-element">app.R</span> and click <span class="ui-element">Run App</span>, a copy of the example My Favorite Albums site should open.
-    <div class="image-container">
-      <img src="tasks/rstudio_run_tutorial.png" alt="Screenshot of RStudio showing the run button" style="max-width:100%; height:auto; margin: 10px 0;">
-    </div>
-    If RStudio still prompts you to install or update any packages, follow the instructions shown in the pop-ups.
-  </p>
+      Now, near the top center of RStudio, click <span class="ui-element">Run App</span>, and a copy of the example My Favorite Albums site should open.
+      <div class="image-container">
+        <img src="tasks/rstudio_run_tutorial.png" alt="Screenshot of RStudio showing the run button" style="max-width:100%; height:auto; margin: 10px 0;">
+      </div>
+      If RStudio still prompts you to install or update any packages, follow the instructions shown in the pop-ups.
+    </p>
   </body>
 </html>
