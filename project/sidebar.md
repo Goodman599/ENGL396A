@@ -22,9 +22,9 @@
     * [Example Custom Sorting Method](tasks/creating_a_sorting_method.html#example)
 
 * Technical Reference
-  * [Full Reference Guide](tasks/reference.html)
-    * [Sorting Methods](tasks/reference.html#ref-sorting)
-    * [CSV Column Data](tasks/reference.html#ref-csv)
-    * [R & Dplyr Functions](tasks/reference.html#ref-dplyr)
-    * [Shiny App Logic](tasks/reference.html#ref-shiny)
-    * [Troubleshooting](tasks/reference.html#ref-troubleshoot)
+  * [Full Reference Guide](references/references.html)
+    * [Sorting Methods](references/references.html#ref-sorting)
+    * [CSV Column Data](references/references.html#ref-csv)
+    * [R & Dplyr Functions](references/references.html#ref-dplyr)
+    * [Shiny App Logic](references/references.html#ref-shiny)
+    * [Troubleshooting](references/references.html#ref-troubleshoot)
