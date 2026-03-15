@@ -5,6 +5,10 @@
   </head>
   <body>
     <h1 id="title">Creating and Adding a Custom .csv File</h1>
+    <div class="popup important">
+      <div class="popup-header">Important:</div>
+      If you don't know what a .csv file is, see <a href="concepts/developer_overview.html#csv-structure">the definition here</a>.
+    </div>
     <p>To import custom album data, you need to have both My Favorite Albums and RStudio installed and set up.<br>
     By creating a custom .csv file, you can change the album data My Favorite Albums can analyze.</p>
     <div class="popup important">
@@ -18,15 +22,15 @@
     Alternatively, you could use an online csv editor, like the one on <a href="https://tableconvert.com/csv-generator" rel="CSVeditor" target="_blank">tableconvert.com</a>.</p>
     <p>To work with a spreadsheet software:</p>
     <ol>
-      <li>Set the first row, or headers, of the spreadsheat to <span class="code-snippet">Year,Ranking,Album,Artist,Rating,Vinyl,EP,Live</span><br></li>
-      <li>Fill out the spreadsheet normally for each of your favorite albums. Details are given in the <a class="ui=element" href="#filling-csv">Filling a .csv File</a> section</li>
+      <li>Set the first row, or headers, of the spreadsheat to <span class="code-snippet">Year,Ranking,Album,Artist,Rating,Vinyl,EP,Live</span><br>. These define the information contained in each column of the spreadsheet.</li>
+      <li>Fill out the spreadsheet normally for each of your favorite albums. Details are given in the <a class="ui=element" href="#filling-csv">Filling a .csv File</a> section.</li>
       <li>
         When you're done, download your spreadsheet as a .csv file.
         <ul>
           <li>
-            If you are using excel or a similar software:
+            If you are using Excel or a similar software:
             <ol>
-              <li>Click <span class="ui-element">File</span>-><span class="ui-element">Save As</span></li>
+              <li>Click <span class="ui-element">File</span>-><span class="ui-element">Save As</span>.</li>
               <li>Select .csv as the file format.</li>
             </ol>
           </li>
@@ -41,7 +45,7 @@
       <li>Name the file <span class="code-snippet">album-rankings.csv</span></li>
     </ol>
     <h3>Using RStudio</h3>
-    <p>RSudio comes with an in-built way to view and edit .csv files. While not requiring any external tools, the process can be more confusing and time consuming.</p>
+    <p>RSudio comes with a built-in way to view and edit .csv files. While not requiring any external tools, the process can be more confusing and time consuming.</p>
     <p>To work with RStudio:</p>
     <ol>
       <li>
@@ -55,10 +59,11 @@
         <ul>
           <li>Treat each comma like a column in a spreadsheet, and each line change as a row. Commas with nothing between them are the same as an empty cell.</li>
           <li>
-            The album Becoming X by Sneaker Pimps released in 1996 can be entered as <span class="code-snippet">1996,,Becoming X,Sneaker Pimps,,,,</span>
-            <div class="popup warning">
-              <div class="popup-header">Warning:</div>
-              This will not be a valid entry in the .csv file because it is missing a rating and ranking. This is just to show how an entry would be formatted.
+            <strong>Example:</strong><br>
+            If the album Becoming X by Sneaker Pimps released in 1996 is a 7/10 and your 5th favorite album released in 1996, it can be entered as <span class="code-snippet">1996,5,Becoming X,Sneaker Pimps,7,,,</span>
+            <div class="popup important">
+              <div class="popup-header">Important:</div>
+              This assumes you the album wasn't a live recording, the album is not an EP, and you don't own a vinyl for that album. The values to enter if any of these are false are shown in <a href="#filling-csv">this table</a>.
             </div>
           </li>
         </ul>
@@ -121,7 +126,7 @@
     </table>
     <div class="popup warning">
       <div class="popup-header">Warning:</div>
-      My Favorite Albums do not check if your ratings match your rankings. If you accidentally rank a 1/10 album as the first in a year, My Favorite Albums will likely return erroneous data.
+      My Favorite Albums does not check if your ratings match your rankings. If you accidentally rank a 1/10 album as the first in a year, My Favorite Albums will return erroneous data.
     </div>
 
     <h1>Importing Your Album Rankings Into My Favorite Albums</h1>
