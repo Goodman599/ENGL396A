@@ -4,11 +4,11 @@
   * [For Developers](concepts/developer_overview.html)
 
 * Getting Started
-  * [Using My Favorite Albums](tasks/using_MFA.html#title)
-  * [Downloading & Setup](tasks/download.html#title)
+  * [Using My Favorite Albums](tasks/using_MFA.html)
+  * [Downloading & Setup](tasks/download.html)
 
 * Data Customization
-  * [Creating & Adding CSV Data](tasks/dataset.html#title)
+  * [Creating & Adding CSV Data](tasks/dataset.html)
   * [Filling the .csv File](tasks/dataset.html#filling-csv)
 
 * Creating a Sorting Method
