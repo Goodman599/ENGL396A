@@ -29,7 +29,7 @@
     <p>To start creating your own sorting method, first you need to create a file to house it in.</p>
     <ol>
       <li>
-        In the bottom left of RStudio, make sure you are in <span class="ui-element">MyFavoriteAlbums-main</span> and click <span class="ui-element">New File</span>.
+        In the bottom right of RStudio, make sure you are in <span class="ui-element">MyFavoriteAlbums-main</span> and click <span class="ui-element">New File</span>.
         <div class="image-container">
           <img src="tasks/rstudio_new_file_tutorial.png" alt="Screenshot of RStudio showing the New File button" style="max-width:100%; height:auto; margin: 10px 0;">
         </div>
@@ -39,7 +39,7 @@
     </ol>
     
     <h3 id="adding-functionality">Creating your Sorting Method(Function)</h3>
-    <p>You need to give your sorting method, called functions, a name for My Favorite Albums to recognise it. The crux of a function is to process data, and you can have many different functions, usually called helper functions, in one file.</p>
+    <p>You need to give your sorting method, called a function, a name for My Favorite Albums to recognise it. The crux of a function is to process data, and you can have many different functions, usually called helper functions, in one file.</p>
     <ol>
       <li>
         In the editor on the top right of RStudio, enter the name of the function. 
@@ -112,10 +112,12 @@
       </li>
       <div class="popup info">
         <div class="popup-header">Note:</div>
-        There are a lot more useful functions in dplyr, the table management package My Favorite Albums uses. <a href="https://nyu-cdsc.github.io/learningr/assets/data-transformation.pdf" target="_blank" rel="dplyr cheatsheet">This cheatsheet</a>, especially the sections <span class="ui-element">Manipulate Cases</span>, <span class="ui-element">Manipulate Variables</span>, and <span class="ui-element">Summary Functions</span> sections can be useful.
+        There are a lot more useful functions in dplyr, the table management package My Favorite Albums uses. <a href="https://nyu-cdsc.github.io/learningr/assets/data-transformation.pdf" target="_blank" rel="dplyr cheatsheet">This cheatsheet</a>, especially the <span class="ui-element">Manipulate Cases</span>, <span class="ui-element">Manipulate Variables</span>, and <span class="ui-element">Summary Functions</span> sections, provides a nice list of useful functions not covered in this guide.
       </div>
     </ul>
     <p>To have your function return the data you calculated, assign a variable with that data as the last line of code in the function.</p>
+    <div class="popup info">
+      <div class="popup-header">Note:</div>
 
 
     <h2>Adding Your Function To My Favorite Albums</h2>
@@ -157,7 +159,7 @@
         <div class="popup info">
           <div class="popup-header">Note:</div>
           <p>
-            There are many different inputs and outputs, all of which must be used differently. <a href="https://github.com/rstudio/cheatsheets/blob/main/shiny.pdf", rel="Shiny Cheatsheet" target="_blank">This Cheatsheet</a>, especially the <span class="ui-element"></span> and <span class="ui-element"></span> sections, lists the different functions and how to use them. <br>
+            There are many different inputs and outputs, all of which must be used differently. <a href="https://github.com/rstudio/cheatsheets/blob/main/shiny.pdf", rel="Shiny Cheatsheet" target="_blank">This Cheatsheet</a>, especially the <span class="ui-element">Inputs</span> and <span class="ui-element">Outputs</span> sections, lists the different functions and how to use them. <br>
             <strong>As a general rule, the first entry in the parentheses() will always be the name, or ID, of the input/output. </strong><br>
             You can ignore the ellipses (...) that the cheatsheet uses. They are optional parameters, and will work perfectly without them.
           </p>
@@ -290,7 +292,7 @@ list_albums <- function() {
        htmlOutput("all_albums_title"),
        tableOutput("all_albums_table"))</div>
     
-    <div class="popup important>
+    <div class="popup important">
       <div class="popup-header">Important:</div>
       Make sure that the previous <span class="code-snippet">tabPanel</span> entry has a comma at the end.
     </div>
@@ -298,13 +300,13 @@ list_albums <- function() {
     <p>Finally, in app_server.R:</p>
     <ol>
       <li>
-        First, we add the title by targeting <em>all_albums_title</em>: <br>
+        Add the title of the page by targeting <em>all_albums_title</em>: <br>
         <div class="code-block">output$all_albums_title <- renderUI({
   HTML("&lt;h2&gt;Every album in the database&lt;/h2&gt;&lt;br&gt;")
 })</div>
       </li>
       <li>
-        Next, we target the <em>all_albums_table</em> and replace it with a <span class="code-snippet">return()</span> from calling our function <em>list_albums</em>.<br>
+        Add the data by targeting <em>all_albums_table</em> and replacing it with the <span class="code-snippet">return()</span> from calling our function <em>list_albums</em>.<br>
         <div class="code-block">output$all_albums_table <- renderTable({
   return(list_albums())
 })</div>
