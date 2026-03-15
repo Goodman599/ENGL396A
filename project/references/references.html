@@ -25,7 +25,7 @@
         </tr>
         <tr>
           <td><strong>Top Albums By Year</strong></td>
-          <td>Shows a complete ranked list of every album released in a specific year.</td>
+          <td>Shows a complete ranked list of the albums in the imported dataset for a specific year.</td>
           <td>Single Year Selection</td>
           <td><strong>Manual Action:</strong> Users must manually resolve any ranking ties for the selected year.</td>
         </tr>
@@ -108,7 +108,10 @@
         </tr>
       </tbody>
     </table>
-
+    <p>To add a comma to entries, such as an artist or album name, enclose the entry in <span class="code-snippet">""</span>.</p>
+    <p>For example, the album Old Traditions, New Standards becomes <span class="code-snippet">"Old Traditions, New Standards"</span>.</p>
+    
+    
     <h2>Reference: R & dplyr Data Functions</h2>
     <p>Use these functions within your custom <span class="code-snippet">.R</span> scripts to process and filter your album data.</p>
     
@@ -142,8 +145,8 @@
           <td><span class="code-snippet">my_variable &lt;- 1993</span></td>
         </tr>
         <tr>
-          <td><span class="code-snippet">==</span> , <span class="code-snippet">&gt;</span> , <span class="code-snippet">&lt;</span></td>
-          <td>Comparison operators: Equals, Greater than, Less than.</td>
+          <td><span class="code-snippet">==</span> , <span class="code-snippet">&gt;</span> , <span class="code-snippet">&gt;=</span> , <span class="code-snippet">&lt;</span></td>, <span class="code-snippet">&lt;=</span></td>
+          <td>Comparison operators: Equals, Greater than, Greater than or equal to, Less than or equal to.</td>
           <td><span class="code-snippet">Year &gt;= 2000</span></td>
         </tr>
       </tbody>
@@ -211,9 +214,14 @@
           <td>Ensure <code>source("your_filename.R")</code> is included at the top of <strong>app.R</strong>.</td>
         </tr>
         <tr>
+          <td><strong>Can't find My Favorite Album files in RStudio</strong></td>
+          <td>Incorrect work directory</td>
+          <td>At the top navigation bar of RStudio, click <span class="ui-element">Session -> Set Working Directory -> Choose Directory</span> and open the folder you have My Favorite Albums saved in.</td>
+        </tr>
+        <tr>
           <td><strong>'Object not found'</strong></td>
-          <td>Case-sensitivity or typo.</td>
-          <td>R is case-sensitive; check that <code>album_data</code> is not written as <code>Album_Data</code>.</td>
+          <td>Case-sensitivity, typo, or incorrect file directories.</td>
+          <td>R is case-sensitive; check that <code>album_data</code> is not written as <code>Album_Data</code>. Additionally, ensure that the .csv file is in the data folder</td>
         </tr>
         <tr>
           <td><strong>Empty Table or Plot</strong></td>
