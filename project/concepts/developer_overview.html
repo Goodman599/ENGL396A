@@ -3,24 +3,28 @@
       <link rel="stylesheet" type="text/css" href="style.css">
       <title>Developer Concepts - MFA</title>
   </head>
-  <body>
-      <h1 id="developer-concepts-title">Developer Concepts</h1>
-      <p>MFA is built to be modular, allowing developers to personalize the experience by inputting data or adding logic.</p>
+<body>
+    <h2 id="csv-structure">What is a .csv file?</h2>
+    <p>MFA stores data in <code>.csv</code> format. It functions like a spreadsheet with these headers:</p>
+    <p class="code-snippet">Year, Ranking, Album, Artist, Rating, Vinyl, EP, Live</p>
 
+    <h2 id="tech-stack">The Tech Stack</h2>
+    <ul>
+        <li><strong>R:</strong> The core programming language.</li>
+        <li><strong>RStudio:</strong> The recommended IDE for editing code and data.</li>
+    </ul>
+
+    <h2 id="file-structure">File System Rundown:</h2>
+    <ul>
+      <li><strong>Sorting methods (i.e. all_albums.R):</strong> A file containing the code required to run a sorting method.</li>
+      <li><strong>app.R:</strong> The "hub" for My Favorite Albums. Contains references to every sorting method. References are required to run functions.</li>
+      <li><strong>app_ui.R:</strong> Defines all of the UI a sorting method needs. Defines all of the buttons, sliders, displays, etc., a function needs.</li>
+      <li><strong>app_server.R:</strong> Defines how the functions of a sorting method are connected to the UI defined in app_ui.R. Without it, the UI would be purely decorative.</li>
+    </ul>
   
-      <h2 id="csv-structure">What is a .csv file?</h2>
-      <p>MFA stores data in <code>.csv</code> format. It functions like a spreadsheet with these headers:</p>
-      <p class="code-snippet">Year, Ranking, Album, Artist, Rating, Vinyl, EP, Live</p>
-  
-      <h2 id="tech-stack">The Tech Stack</h2>
-      <ul>
-          <li><strong>R:</strong> The core programming language.</li>
-          <li><strong>RStudio:</strong> The recommended IDE for editing code and data.</li>
-      </ul>
-  
-      <div class="popup info">
-        <div class="popup-header">Note:</div>
-        MFA is modular. You can experiment with new sorting methods without breaking the core software.
-      </div>
+    <div class="popup info">
+      <div class="popup-header">Note:</div>
+      MFA is modular. You can experiment with new sorting methods without breaking the core software.
+    </div>
   </body>
 </html>
