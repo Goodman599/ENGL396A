@@ -176,7 +176,7 @@
     <p>Now, My Favorite Albums knows how to display the information obtained from your function. However, it still does not know how to use the function itself.</p>
 
           
-    <h3>Build the Connection (app_server.R)</h3>
+    <h3 id="connect">Build the Connection (app_server.R)</h3>
     <p>The <span class="ui-element">app_server.R</span> file is the "brain." It takes the value from the <span class="ui-element">Input</span>, passes it to your <span class="ui-element">Function</span>, and sends the result back to the <span class="ui-element">Output</span> slot you created in the UI.</p>
     <ol>
       <li>Start with <span class="code-snippet">output$</span>, followed by the placeholder UI element ID you defined in <span class="ui-element">app_UI.R</span> you want to write to.</li>
@@ -245,7 +245,7 @@
       <p>
         In the end, your code should resemble this:
         <div class="code-block">output$my_output_id <- renderText({
-  return(your_function_name(input$my_input_id)) <br>
+  return(your_function_name(input$my_input_id))
 })</div>
       </p>
     </ol>
