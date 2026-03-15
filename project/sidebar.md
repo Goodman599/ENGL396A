@@ -17,4 +17,5 @@
   * [Useful Functions](tasks/creating_a_sorting_method.html#filter-functions)
   * [Registering your Function](tasks/creating_a_sorting_method.html#registering)
   * [Adding the User Interface](tasks/creating_a_sorting_method.html#ui-design)
+  * [Making the User Interface work](tasks/creating_a_sorting_method.html#connect)
   * [Example Custom Sorting Method](tasks/creating_a_sorting_method.html#example)
